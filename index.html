@@ -1508,24 +1508,26 @@
 
     const defaultIdeas = [
       { id: "domMarket", emoji: "⛪", title: "Cathedral market · Am Kölner Dom", city: "Old Town", img: "dom-market.jpg", desc: "The famous one, right under the cathedral spires with the big tree and the canopy of lights. Busiest of the lot. Open till 22:00 on Friday and Saturday." },
-      { id: "heinzels", emoji: "⛸️", title: "Heinzels Wintermärchen · Alter Markt + Heumarkt", city: "Old Town", img: "heinzels.jpg", desc: "The Old Town market built around Cologne's Heinzelmännchen elves legend, spread over two squares. Ice rink and curling lanes on Heumarkt." },
+      { id: "heinzels", emoji: "⛸️", title: "Heinzels Wintermärchen · Alter Markt + Heumarkt", city: "Old Town", img: "eisbahn.jpg", desc: "The Old Town market built around Cologne's Heinzelmännchen elves legend, spread over two squares. Ice rink and curling lanes on Heumarkt." },
       { id: "engel", emoji: "👼", title: "Markt der Engel · Neumarkt", city: "Centre", img: "engel.jpg", desc: "The 'angels' market: white tents under thousands of fairy lights, more elegant and a touch calmer than the Dom." },
-      { id: "hafen", emoji: "⚓", title: "Harbour market + Chocolate Museum", city: "Rheinauhafen", img: "schoko.jpg", desc: "Maritime-themed market on the Rhine next to the Lindt Chocolate Museum. Less touristy, good for the busy Saturday evening window." },
+      { id: "hafen", emoji: "⚓", title: "Harbour market + Chocolate Museum", city: "Rheinauhafen", img: "hafen.jpg", desc: "Maritime-themed market on the Rhine next to the Lindt Chocolate Museum. Less touristy, good for the busy Saturday evening window." },
       { id: "nikolaus", emoji: "🎅", title: "Nikolausdorf · Rudolfplatz", city: "Centre", img: "rudolfplatz.jpg", desc: "Village-style market by the old Hahnentor city gate. Sunday 6 Dec is Nikolaustag (St Nicholas Day), the obvious day to go." },
       { id: "stadtgarten", emoji: "🎶", title: "Stadtgarten market", city: "Belgian Quarter", img: "stadtgarten.jpg", desc: "Smaller, local-feeling market in the park near the Belgian Quarter. Designer and craft stalls, DJs some evenings." },
-      { id: "domTower", emoji: "🧗", title: "Climb the cathedral's south tower", city: "Old Town", img: "dom-market.jpg", desc: "About 530 steps up a narrow spiral for the view over the Rhine and the markets. Go in the morning before queues build. Check opening times before you go." },
+      { id: "domTower", emoji: "🧗", title: "Climb the cathedral's south tower", city: "Old Town", img: "dom-inside.jpg", desc: "533 steps up a narrow spiral for the view over the Rhine and the markets. €8, 09:00–16:00 in winter (last entry 15:30), so it's a daylight job." },
       { id: "blueHour", emoji: "🌉", title: "Hohenzollern Bridge at blue hour", city: "Rhine", img: "hohenzollern.jpg", desc: "Walk across the love-lock bridge around 16:30 to 17:00 for the lit-up cathedral across the river. Free, and the best photo of the weekend." },
       { id: "brauhaus", emoji: "🍺", title: "Kölsch brauhaus crawl", city: "Old Town", img: "brauhaus.jpg", desc: "Früh am Dom, Päffgen, Peters, Malzmühle. Kölsch comes in small glasses and keeps coming until you put a beer mat on top." },
       { id: "ludwig", emoji: "🎨", title: "Museum Ludwig", city: "Old Town", img: "ludwig.jpg", desc: "Pop art and modern art next to the cathedral. The rainy-day or slow Sunday morning option. Check opening hours before you go." },
       { id: "schoko", emoji: "🍫", title: "Lindt Chocolate Museum", city: "Rheinauhafen", img: "schoko.jpg", desc: "Right next to the harbour market. Pairs with it as one stop. Expect Saturday queues." },
-      { id: "therme", emoji: "♨️", title: "Claudius Therme thermal spa", city: "Deutz (across the Rhine)", img: "hohenzollern.jpg", desc: "Thermal pools and saunas in the Rheinpark. A warm reset between cold market sessions. Prices and sauna rules not checked yet." },
-      { id: "aachen", emoji: "🚆", title: "Day trip: Aachen Christmas market", city: "Aachen", img: "heinzels.jpg", desc: "Market around Aachen's cathedral, famous for Printen gingerbread. Roughly 35 to 60 min by train. Only worth it if the group wants a second city." },
-      { id: "duesseldorf", emoji: "🌃", title: "Evening in Düsseldorf Altstadt", city: "Düsseldorf", img: "engel.jpg", desc: "Short train hop (roughly 25 to 45 min). Altbier instead of Kölsch, and handy if we're flying home from Düsseldorf anyway." }
+      { id: "kdCruise", emoji: "🚢", title: "KD Advent cruise on the Rhine", city: "Altstadt (Fischmarkt)", img: "hohenzollern.jpg", desc: "Afternoon Advent trip, Sat 5 Dec runs: board 15:00, sail 15:30–17:30, so you get sunset and blue hour from the river. €28 adults, live music and St Nicholas on board. Clashes with the bridge walk." },
+      { id: "rooftop", emoji: "🏙️", title: "Rooftop market + curling (SonnenscheinEtage)", city: "Centre (top of Galeria)", desc: "Small market on the 14th floor of the Galeria building with cathedral views and three curling lanes (from €99 a lane). Free entry, buy one drink each. Weekends 11:00–23:00 (2025 hours)." },
+      { id: "therme", emoji: "♨️", title: "Claudius Therme thermal spa", city: "Deutz (across the Rhine)", img: "therme.jpg", desc: "Thermal pools and saunas in the Rheinpark. A warm reset between cold market sessions. Prices and sauna rules not checked yet." },
+      { id: "aachen", emoji: "🚆", title: "Day trip: Aachen Christmas market", city: "Aachen", img: "aachen.jpg", desc: "Market around Aachen's cathedral, famous for Printen gingerbread. Roughly 35 to 60 min by train. Only worth it if the group wants a second city." },
+      { id: "duesseldorf", emoji: "🌃", title: "Evening in Düsseldorf Altstadt", city: "Düsseldorf", img: "duesseldorf.jpg", desc: "Short train hop (roughly 25 to 45 min). Altbier instead of Kölsch, and handy if we're flying home from Düsseldorf anyway." }
     ];
 
     // Photo per idea by id — applied at render time so it also reaches ideas
     // already saved in the synced state (which predate the img field).
-    const IDEA_IMG = { domMarket: "dom-market.jpg", heinzels: "heinzels.jpg", engel: "engel.jpg", hafen: "schoko.jpg", nikolaus: "rudolfplatz.jpg", stadtgarten: "stadtgarten.jpg", domTower: "dom-market.jpg", blueHour: "hohenzollern.jpg", brauhaus: "brauhaus.jpg", ludwig: "ludwig.jpg", schoko: "schoko.jpg", therme: "hohenzollern.jpg", aachen: "heinzels.jpg", duesseldorf: "engel.jpg" };
+    const IDEA_IMG = { domMarket: "dom-market.jpg", heinzels: "eisbahn.jpg", engel: "engel.jpg", hafen: "hafen.jpg", nikolaus: "rudolfplatz.jpg", stadtgarten: "stadtgarten.jpg", domTower: "dom-inside.jpg", blueHour: "hohenzollern.jpg", brauhaus: "brauhaus.jpg", ludwig: "ludwig.jpg", schoko: "schoko.jpg", therme: "therme.jpg", aachen: "aachen.jpg", duesseldorf: "duesseldorf.jpg", kdCruise: "hohenzollern.jpg" };
 
     // Crew Desk — own a job, share options, group votes, owner locks the pick.
     const BK = (slug) => `https://www.booking.com/hotel/de/${slug}.en-gb.html?checkin=2026-12-04&checkout=2026-12-06&group_adults=2&no_rooms=1&selected_currency=GBP`;
@@ -1553,7 +1555,8 @@
           { id: "st_mondial", by: null, researcher: "Live search", title: "Hotel Mondial am Dom (MGallery)", link: BK("mondial-am-dom-koln"), price: "£645 per room, 2 nights (~£323 pp)", availability: "Available", availabilityTone: "warn", notes: "Two minutes from the Dom market. Was the original shortlist pick.", verdict: "Best location, premium price.", facts: [{ label: "Walk to Dom", value: "~2 min" }], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_malzmuehle", by: null, researcher: "Live search", title: "Hotel zur Malzmühle (brauhaus hotel)", link: BK("zur-malzmuhle"), price: "£710 per room, 2 nights (~£355 pp)", availability: "Available", availabilityTone: "warn", notes: "Rooms above a working brauhaus in the Old Town. 8.3 rating.", verdict: "Most Cologne experience, priciest weekend rate.", facts: [], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} }
         ], status: "open", chosen: null },
-        { id: "dinner_sat", taskId: "foodBars", emoji: "🍺", kind: "dinner", title: "Saturday 5 Dec group dinner for seven", desc: "A walk-in table for seven at a brauhaus on a December Saturday is a gamble. Decide: book one, or split into smaller groups and walk in.", owners: [], options: [
+        { id: "dinner_sat", taskId: "foodBars", emoji: "🍺", kind: "dinner", title: "Saturday 5 Dec dinner for seven", desc: "Leaning towards eating at the market stalls (no booking needed). If the crew would rather sit down, a walk-in table for seven at a brauhaus on a December Saturday is a gamble, so book one.", owners: [], options: [
+          { id: "din_market", by: null, researcher: "Jason", title: "Market food crawl (Heinzels food alleys)", link: "https://www.heinzels-wintermaerchen.de/en/", price: "Pay as you go, roughly €5–10 a dish (2024 prices)", availability: "No booking needed", availabilityTone: "done", notes: "Reibekuchen, Flammlachs, Handbrot and Glühwein, straight after the ice rink.", verdict: "Jason's lean: cheapest, most Christmassy, and no table to fight for.", facts: [], photos: ["images/market-food.jpg"], source: "koeln.de and heinzels-wintermaerchen.de · photo is an AI illustration", votes: {} },
           { id: "din_frueh", by: null, researcher: "Shortlist", title: "Früh am Dom", link: "https://www.google.com/maps/search/?api=1&query=Fr%C3%BCh+am+Dom+K%C3%B6ln", price: "Not checked", availability: "Big classic beer hall by the cathedral", availabilityTone: "done", notes: "The default brauhaus. Huge, loud, Kölsch on tap.", verdict: "Most likely to fit seven.", facts: [], photos: [], source: "Trip shortlist", votes: {} },
           { id: "din_paeffgen", by: null, researcher: "Shortlist", title: "Päffgen", link: "https://www.google.com/maps/search/?api=1&query=P%C3%A4ffgen+Friesenstra%C3%9Fe+K%C3%B6ln", price: "Not checked", availability: "The locals' Kölsch hall", availabilityTone: "done", notes: "Friesenstraße, a short walk from Rudolfplatz.", verdict: "More local, pairs with Nikolausdorf and Stadtgarten.", facts: [], photos: [], source: "Trip shortlist", votes: {} },
           { id: "din_peters", by: null, researcher: "Shortlist", title: "Peters Brauhaus", link: "https://www.google.com/maps/search/?api=1&query=Peters+Brauhaus+K%C3%B6ln", price: "Not checked", availability: "Old Town, near Alter Markt", availabilityTone: "done", notes: "Classic brauhaus food and Kölsch.", verdict: "Central, between the Old Town markets.", facts: [], photos: [], source: "Trip shortlist", votes: {} },
@@ -1566,24 +1569,26 @@
     // Itinerary builder — fixed trip skeleton; activities auto-slot onto these days.
     const TRIP_DAYS = [
       { id: "d4", iso: "2026-12-04", date: "Fri 4 Dec", city: "Fly in · first Glühwein", logistics: true, note: "Fly after work. The earliest sensible flight has you in town about 21:00: drop bags and catch the last hour at the cathedral market (open till 22:00 on Fridays)." },
-      { id: "d5", iso: "2026-12-05", date: "Sat 5 Dec", city: "Market day", note: "Two or three markets, not all seven: the cathedral market and Heinzels next door, then one more the crew picks in the Activity Market. Bridge at blue hour, then group dinner." },
-      { id: "d6", iso: "2026-12-06", date: "Sun 6 Dec", city: "Explore the city → home", logistics: true, note: "St Nicholas Day. Shops are shut on Sundays; markets and museums open from 11:00. Cathedral, a museum, a brauhaus lunch, one last mug, then the train to the airport." }
+      { id: "d5", iso: "2026-12-05", date: "Sat 5 Dec", city: "Market day", note: "Daylight runs out about 16:30, so the day half goes to the markets that work in daylight (the cathedral market while it's calm, the Stadtgarten craft market) and the dark half to the ones made for lights: the bridge at blue hour, Heinzels and the ice rink, then dinner from the market stalls." },
+      { id: "d6", iso: "2026-12-06", date: "Sun 6 Dec", city: "Explore the city → home", logistics: true, note: "St Nicholas Day, and an easy one. Everything before the last Glühwein is optional: pick what you fancy, or just wander. Shops are shut on Sundays; markets and museums open from 11:00." }
     ];
 
     // Seeded starter itinerary. Dropped in once, on first load of a board with an
     // empty plan; after that the group's edits win.
-    const SEED_VERSION = 3; // v2 (6 Oct): Thursday option dropped, Fri arrive / Sat markets / Sun city
+    const SEED_VERSION = 4; // v2 (6 Oct): Thursday option dropped, Fri arrive / Sat markets / Sun city
     const KOREA_SEED = [
       { dayId: "d4", time: "18:00", title: "Fly London → Cologne (Friday evening)", emoji: "✈️", kind: "flight" },
       { dayId: "d4", time: "21:00", title: "Check in + last-hour Glühwein at the Dom market", emoji: "🍷" },
-      { dayId: "d5", time: "10:30", title: "Cathedral market · Am Kölner Dom", emoji: "⛪" },
-      { dayId: "d5", time: "12:00", title: "Heinzels Wintermärchen + ice rink (Alter Markt / Heumarkt)", emoji: "⛸️" },
-      { dayId: "d5", time: "14:30", title: "Market no. 3 · the crew's pick (Activity Market vote)", emoji: "🗳️" },
+      { dayId: "d5", time: "10:30", title: "Cathedral market while it's calm", emoji: "⛪" },
+      { dayId: "d5", time: "11:15", title: "Cathedral south tower climb", emoji: "🧗", optional: true },
+      { dayId: "d5", time: "12:30", title: "Hohe Straße + Schildergasse shops", emoji: "🛍️", optional: true },
+      { dayId: "d5", time: "13:30", title: "Stadtgarten craft market + lunch", emoji: "🎁" },
       { dayId: "d5", time: "16:30", title: "Hohenzollern Bridge at blue hour", emoji: "🌉" },
-      { dayId: "d5", time: "19:30", title: "Saturday group dinner (brauhaus)", emoji: "🍺", kind: "dinner" },
-      { dayId: "d6", time: "10:30", title: "Kölner Dom + south tower climb", emoji: "🧗" },
-      { dayId: "d6", time: "12:00", title: "Museum Ludwig or the Chocolate Museum", emoji: "🎨" },
-      { dayId: "d6", time: "13:30", title: "Brauhaus lunch + Kölsch (Old Town)", emoji: "🍺" },
+      { dayId: "d5", time: "17:30", title: "Heinzels Wintermärchen + ice rink after dark", emoji: "⛸️" },
+      { dayId: "d5", time: "19:00", title: "Market food dinner (Heinzels food alleys)", emoji: "🥔", kind: "dinner" },
+      { dayId: "d6", time: "10:30", title: "Inside the Kölner Dom", emoji: "⛪", optional: true },
+      { dayId: "d6", time: "11:30", title: "Museum Ludwig or the Chocolate Museum", emoji: "🎨", optional: true },
+      { dayId: "d6", time: "13:30", title: "Brauhaus lunch + Kölsch (Old Town)", emoji: "🍺", optional: true },
       { dayId: "d6", time: "14:45", title: "Last Glühwein + mug swap at the cathedral market", emoji: "☕" },
       { dayId: "d6", time: "16:00", title: "Collect bags + train Köln Hbf → Düsseldorf Airport", emoji: "🚆" },
       { dayId: "d6", time: "18:20", title: "Fly Düsseldorf → Heathrow (Eurowings, if booked)", emoji: "✈️", kind: "flight" }
@@ -1602,7 +1607,7 @@
         const have = new Set(p.items.map(it => (it.title || "").trim().toLowerCase()));
         const add = KOREA_SEED
           .filter(s => !have.has(s.title.trim().toLowerCase()))
-          .map((s, i) => ({ id: `seed${SEED_VERSION}_${i}`, dayId: s.dayId, title: s.title, emoji: s.emoji || guessEmoji(s.title), city: "", kind: s.kind || "activity", note: "", time: s.time || "" }));
+          .map((s, i) => ({ id: `seed${SEED_VERSION}_${i}`, dayId: s.dayId, title: s.title, emoji: s.emoji || guessEmoji(s.title), city: "", kind: s.kind || "activity", note: "", time: s.time || "", ...(s.optional ? { optional: true } : {}) }));
         p.items = p.items.concat(add);
         p.seeded = true;
         p.seedVersion = SEED_VERSION;
@@ -2085,6 +2090,7 @@
 
     function ideaImageFor(idea) {
       if (idea.img || IDEA_IMG[idea.id]) return idea.img || IDEA_IMG[idea.id];
+      if (idea.id === "rooftop") return null; // no free photo of it: show the emoji card, not a wrong market
       const t = (idea.title || "").toLowerCase();
       if (/(dom|cathedral|tower)/.test(t)) return "dom-market.jpg";
       if (/(bridge|rhine|river|spa|therme)/.test(t)) return "hohenzollern.jpg";
@@ -3042,7 +3048,7 @@
     const DAY_SCENE = { d4: "dom-market.jpg", d5: "heinzels.jpg", d6: "hohenzollern.jpg" };
     const DAY_DETAILS = {
       d4: { sleep: "Hotel to be booked · central Cologne", move: "After-work flight, then S-Bahn (Cologne Bonn) or train (Düsseldorf) to Köln Hbf", prep: "Euros in cash for stalls and mug deposits · warm layers" },
-      d5: { sleep: "Hotel to be booked · central Cologne", move: "On foot all day, tram if legs give out", prep: "Group dinner decision made · comfy waterproof shoes" },
+      d5: { sleep: "Hotel to be booked · central Cologne", move: "On foot all day, tram if legs give out", prep: "Ice rink tickets online (€11.50 Sat + €6.50 skates) · tower tickets if climbing · cash for food stalls" },
       d6: { sleep: "Home", move: "On foot round the Old Town, then train Köln Hbf → Düsseldorf Flughafen (Eurowings 18:20) or S-Bahn to Cologne Bonn", prep: "Check out by the hotel's time, leave bags, check DB Navigator before leaving" }
     };
     // Operational detail per day, shown under the day's stops.
@@ -3052,8 +3058,9 @@
         { icon: "✈️", title: "Friday-evening options (one way, 6 Oct prices)", lines: ["Ryanair Stansted 18:00 → Cologne Bonn 20:15 · £106 · in town ~21:00.", "Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · in town ~23:10.", "BA Heathrow 17:15 → Düsseldorf 19:40 · £172.", "Cologne Bonn airport → Köln Hbf: S-Bahn S19/S13, 15–20 min."] }
       ],
       d5: [
-        { icon: "🗺️", title: "How the day flows", lines: ["Cathedral market first while it's quiet, then Heinzels next door.", "Market no. 3 is whichever wins the Activity Market vote: Markt der Engel (Neumarkt), Nikolausdorf (Rudolfplatz), Stadtgarten or the harbour market.", "The Old Town is at its busiest roughly 16:00 to 20:00, so the harbour market is the calmer pick for later."] },
-        { icon: "🍺", title: "Dinner for seven", lines: ["December Saturdays are packed. Either book one table or split into two smaller groups and walk in.", "Kölsch keeps coming in small glasses until you put your beer mat on top."] }
+        { icon: "🌗", title: "Day half, dark half", lines: ["Sunset is about 16:28 and blue hour roughly 16:35–17:10, so do the daylight things first.", "Cathedral market opens 10:00 Saturdays and is calmest in the morning. The south tower is 533 steps, €8, last entry 15:30 (book at koelner-dom.de).", "Stadtgarten is a craft and designer market (60+ stalls, gifts) open from 12:00 at weekends (2025 hours)."] },
+        { icon: "⛸️", title: "Ice rink after dark", lines: ["Heinzels rink on Heumarkt runs 11:00–21:45 and is lit at night.", "Saturday adult ticket €11.50, skate hire €6.50. From 20:45 there's a €6 'good night' ticket.", "The organisers push booking online to guarantee entry, so book for seven before the day."] },
+        { icon: "🎄", title: "Christmas shops?", lines: ["There's no Käthe Wohlfahrt or dedicated Christmas shop in central Cologne.", "The nearest thing: the Galeria flagship on Hohe Straße, and the SonnenscheinEtage rooftop market on top of the Galeria building (cathedral views, curling lanes)."] }
       ],
       d6: [
         { icon: "🎅", title: "Nikolaustag in the city", lines: ["6 Dec is St Nicholas Day. Nikolausdorf at Rudolfplatz is the obvious stop.", "Most shops are shut on Sundays in Germany. Markets and museums open from 11:00.", "Sunday is a service day at the cathedral: check visiting and tower times before you go."] },
@@ -3065,6 +3072,18 @@
       { id: "x-flightout", kind: "extra", icon: "🛬", name: "Friday evening flights", tag: "Vote in the Crew Desk", summary: "The earliest sensible flight lands about 20:15, so Friday night is roughly an hour at the markets before they close at 22:00. The cheapest has you in town about 23:10.", sections: [{ h: "Earliest into town", lines: ["Ryanair Stansted 18:00 → Cologne Bonn 20:15 · £106 · in town ~21:00."] }, { h: "Cheapest", lines: ["Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · in town ~23:10."] }] },
       { id: "x-stay", kind: "extra", icon: "🏨", name: "Hotels are already pricey", tag: "Book early", summary: "On 6 Oct, central 3–4★ doubles were £448–£710 for Fri + Sat, about £224–£355 each sharing.", sections: [{ h: "For seven of us", lines: ["Agree the room split for seven early.", "A big apartment hasn't been searched yet. Worth a look if we want one base."] }] }
     ];
+    DETAILS.push(
+      { id: "x-food", kind: "stop", match: "market food", icon: "🥔", name: "What to eat at the markets", tag: "Saturday dinner", summary: "No booking for seven: graze the stalls instead. Heinzels has its own food alleys, Markt der Engel has the widest street-food range, and Stadtgarten is best for vegan and modern food.", sections: [
+        { h: "Cologne must-eats", lines: ["Reibekuchen (Rievkooche): crisp potato pancakes with apple sauce, the Cologne market classic (about €7.50+ in 2024).", "Flammlachs: salmon roasted on planks over an open fire (Hafen, Engel, Heinzels).", "Handbrot: bread baked round a ham-and-cheese filling (Heinzels)."] },
+        { h: "Also worth it", lines: ["Flammkuchen, thin and crispy (Stadtgarten, Hafen).", "Lángos, Hungarian fried flatbread (from about €6.50 in 2024).", "Käsespätzle, or pasta tossed in a cheese wheel (Engel).", "Fischbrötchen at the harbour market."] },
+        { h: "Sweet", lines: ["Gebrannte Mandeln, sugar-roasted almonds (from about €4).", "Roast chestnuts (about €3 for six in 2024).", "Waffles, crêpes and strudel at Heinzels, Engel and Stadtgarten."] },
+        { h: "Drinks", lines: ["Glühwein, red or white (about €4.50–5 plus a €3–3.50 mug deposit).", "Feuerzangenbowle: Glühwein with a flaming rum-soaked sugar loaf (about €6.50).", "Glühbier (mulled beer) at the harbour market, and Kinderpunsch if you're not drinking."] }
+      ], src: "Prices from 2024 press reports (koeln.de, leinetal24); expect a little more in 2026. Photo: AI-generated illustration." },
+      { id: "x-rink", kind: "stop", match: "ice rink", icon: "⛸️", name: "Heinzels ice rink", tag: "Heumarkt", summary: "The rink sits in the middle of Heinzels Wintermärchen and is lit up at night, which is when it's at its best.", stats: [{ k: "Hours", v: "11:00–21:45 daily" }, { k: "Sat ticket", v: "€11.50 adult" }, { k: "Skate hire", v: "€6.50" }, { k: "Late ticket", v: "€6 from 20:45" }], sections: [{ h: "Booking", lines: ["Book online to guarantee entry (small booking fee). Day tickets, no time slots mentioned.", "Curling (ice stock) lanes are bookable separately at Heinzels, roughly €112–176 per lane per hour on Saturdays (2025 prices)."] }], links: [{ label: "Heinzels ice skating", url: "https://www.heinzels-wintermaerchen.de/en/ice-skating/" }] },
+      { id: "x-tower", kind: "stop", match: "tower climb", icon: "🧗", name: "Cathedral south tower", tag: "Optional · daylight", summary: "533 steps up a narrow spiral to the viewing platform over the Rhine and the markets. Best done in daylight.", stats: [{ k: "Hours (Nov–Feb)", v: "09:00–16:00, last entry 15:30" }, { k: "Adult", v: "€8" }], sections: [{ h: "Tips", lines: ["Book online at koelner-dom.de/tickets, or pay at the Kurienhaus desk on Roncalliplatz.", "Narrow and steep: skip it if you're not keen on heights or tight stairs."] }], links: [{ label: "Tower tickets", url: "https://www.koelner-dom.de/besuchen/turmbesteigung" }] },
+      { id: "x-stadtgarten", kind: "stop", match: "stadtgarten", icon: "🎁", name: "Stadtgarten market", tag: "Daytime market", summary: "The craft and designer market in the park by the Belgian Quarter: 60+ stalls that change weekly (jewellery, stationery, clothing, toys). The best one for browsing gifts in daylight, with good vegan and modern food for lunch.", stats: [{ k: "Weekend hours", v: "12:00–21:30 (2025)" }, { k: "Where", v: "Venloer Str. 40" }] },
+      { id: "x-shops", kind: "stop", match: "schildergasse", icon: "🛍️", name: "Hohe Straße + Schildergasse", tag: "Optional", summary: "Cologne's two big shopping streets, running from the cathedral towards Neumarkt. Shops are open Saturdays (core hours 10:00–20:00) and shut on Sundays.", sections: [{ h: "Christmassy stops", lines: ["Galeria flagship, Hohe Straße 41–53, in a 1914 building.", "SonnenscheinEtage rooftop market on top of the Galeria building (14th floor, An St. Agatha): cathedral views and curling lanes. Free entry, buy one drink each.", "No Käthe Wohlfahrt or dedicated Christmas shop in central Cologne."] }] }
+    );
     const DAY_LEGS = {};
     const DRIVING_NOTES = {};
     const BOOK_BY = [
@@ -3077,7 +3096,9 @@
     // No optional-only days on this trip.
     const OPTIONAL_DAY_IDS = [];
     function isOptionalItem(it) {
-      return !!it && OPTIONAL_DAY_IDS.includes(it.dayId) && it.kind !== "dinner" && it.kind !== "flight";
+      if (!it) return false;
+      if (it.optional) return true;
+      return OPTIONAL_DAY_IDS.includes(it.dayId) && it.kind !== "dinner" && it.kind !== "flight";
     }
     function detailFor(title) {
       const t = String(title || "").toLowerCase();
@@ -3100,7 +3121,7 @@
         ${d.pick ? `<div class="dm-pick"><span>★ Our pick</span>${escapeHtml(d.pick)}</div>` : ""}
         ${variants}${secs}${opts}
         ${links ? `<div class="dm-links">${links}</div>` : ""}
-        ${d.checked ? `<p class="dm-src">Researched ${escapeHtml(d.checked)} from official pages, booking platforms and recent 2025–26 reviews. Prices and hours change, so confirm before paying.</p>` : ""}</div>`;
+        ${d.checked ? `<p class="dm-src">Researched ${escapeHtml(d.checked)} from official pages, booking platforms and recent 2025–26 reviews. Prices and hours change, so confirm before paying.</p>` : ""}${d.src ? `<p class="dm-src">${escapeHtml(d.src)}</p>` : ""}</div>`;
       modal.classList.add("active"); modal.setAttribute("aria-hidden", "false");
       card.scrollTop = 0; const c = card.querySelector(".dm-close"); if (c) c.focus();
     }
@@ -3115,7 +3136,7 @@
         ${l.backup ? `<span class="vpd-note">↩︎ Backup: ${escapeHtml(l.backup)}${l.backupMaps ? " · " + a(l.backupMaps, "map ↗") : ""}</span>` : ""}</div>`).join("")}</div>`;
     }
     // Real, free-licensed photos (Wikimedia Commons / Unsplash), 27 Sep 2026. CC BY and BY-SA require this credit.
-    const PHOTO_CREDITS = [{"f": "dom-market.jpg", "what": "Weihnachtsmarkt am Kölner Dom", "credit": "Photo: Franz Gerd Frank / Wikimedia Commons, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_am_K%C3%B6lner_Dom.jpg", "lic": "CC BY-SA 4.0", "licUrl": "https://creativecommons.org/licenses/by-sa/4.0"}, {"f": "heinzels.jpg", "what": "Heinzels Wintermärchen", "credit": "Photo: Jorge Franganillo / Wikimedia Commons, CC BY 2.0", "url": "https://commons.wikimedia.org/wiki/File:Heinzels_Winterm%C3%A4rchen_(52615446389).jpg", "lic": "CC BY 2.0", "licUrl": "https://creativecommons.org/licenses/by/2.0"}, {"f": "rudolfplatz.jpg", "what": "Nikolausdorf, Rudolfplatz", "credit": "Photo: Geolina163 / Wikimedia Commons, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_Rudolfplatz_1.jpg", "lic": "CC BY-SA 4.0", "licUrl": "https://creativecommons.org/licenses/by-sa/4.0"}, {"f": "stadtgarten.jpg", "what": "Stadtgarten market", "credit": "Photo: Superbass / Wikimedia Commons, CC BY-SA 3.0", "url": "https://commons.wikimedia.org/wiki/File:Stadtgarten_WM_2013_2.jpg", "lic": "CC BY-SA 3.0", "licUrl": "https://creativecommons.org/licenses/by-sa/3.0"}, {"f": "hohenzollern.jpg", "what": "Hohenzollern Bridge and the cathedral at night", "credit": "Photo: Raimond Spekking / Wikimedia Commons, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Hohenzollernbr%C3%BCcke_-_K%C3%B6lner_Dom_-_MusicalDome_bei_Nacht-2928.jpg", "lic": "CC BY-SA 4.0", "licUrl": "https://creativecommons.org/licenses/by-sa/4.0"}, {"f": "brauhaus.jpg", "what": "Früh brauhaus", "credit": "Photo: Raimond Spekking / Wikimedia Commons, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Fr%C3%BCh_Brauhaus_K%C3%B6ln_-_Gesamtansicht_(4602-04).jpg", "lic": "CC BY-SA 4.0", "licUrl": "https://creativecommons.org/licenses/by-sa/4.0"}, {"f": "ludwig.jpg", "what": "Museum Ludwig", "credit": "Photo: Raimond Spekking / Wikimedia Commons, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:Museum_Ludwig_K%C3%B6ln_-_S%C3%BCdansicht.jpg", "lic": "CC BY-SA 4.0", "licUrl": "https://creativecommons.org/licenses/by-sa/4.0"}, {"f": "schoko.jpg", "what": "Chocolate Museum, Rheinauhafen", "credit": "Photo: Dietmar Rabich / Wikimedia Commons, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:K%C3%B6ln,_Schokoladenmuseum_--_2014_--_1818.jpg", "lic": "CC BY-SA 4.0", "licUrl": "https://creativecommons.org/licenses/by-sa/4.0"}, {"f": "engel.jpg", "what": "Neumarkt market panorama", "credit": "Photo: Superbass / Wikimedia Commons, CC BY-SA 3.0", "url": "https://commons.wikimedia.org/wiki/File:Pano_Neumarkt_Weihnachtsmarkt.jpg", "lic": "CC BY-SA 3.0", "licUrl": "https://creativecommons.org/licenses/by-sa/3.0"}];
+    const PHOTO_CREDITS = [{"f":"dom-market.jpg","what":"Weihnachtsmarkt am Kölner Dom","credit":"Photo: Franz Gerd Frank / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_am_K%C3%B6lner_Dom.jpg","lic":"CC BY-SA 4.0","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"heinzels.jpg","what":"Heinzels Wintermärchen","credit":"Photo: Jorge Franganillo / Wikimedia Commons, CC BY 2.0","url":"https://commons.wikimedia.org/wiki/File:Heinzels_Winterm%C3%A4rchen_(52615446389).jpg","lic":"CC BY 2.0","licUrl":"https://creativecommons.org/licenses/by/2.0"},{"f":"rudolfplatz.jpg","what":"Nikolausdorf, Rudolfplatz","credit":"Photo: Geolina163 / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_Rudolfplatz_1.jpg","lic":"CC BY-SA 4.0","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"stadtgarten.jpg","what":"Stadtgarten market","credit":"Photo: Superbass / Wikimedia Commons, CC BY-SA 3.0","url":"https://commons.wikimedia.org/wiki/File:Stadtgarten_WM_2013_2.jpg","lic":"CC BY-SA 3.0","licUrl":"https://creativecommons.org/licenses/by-sa/3.0"},{"f":"hohenzollern.jpg","what":"Hohenzollern Bridge and the cathedral at night","credit":"Photo: Raimond Spekking / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:Hohenzollernbr%C3%BCcke_-_K%C3%B6lner_Dom_-_MusicalDome_bei_Nacht-2928.jpg","lic":"CC BY-SA 4.0","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"brauhaus.jpg","what":"Inside a Früh brauhaus, Cologne","credit":"Photo: Gordito1869 / Wikimedia Commons, CC BY 3.0","url":"https://commons.wikimedia.org/wiki/File:Fr%C3%BCh_em_Veedel_Gastraum_14.JPG","licUrl":"https://creativecommons.org/licenses/by/3.0"},{"f":"ludwig.jpg","what":"Museum Ludwig","credit":"Photo: Raimond Spekking / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:Museum_Ludwig_K%C3%B6ln_-_S%C3%BCdansicht.jpg","lic":"CC BY-SA 4.0","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"schoko.jpg","what":"Chocolate Museum, Rheinauhafen","credit":"Photo: Dietmar Rabich / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:K%C3%B6ln,_Schokoladenmuseum_--_2014_--_1818.jpg","lic":"CC BY-SA 4.0","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"engel.jpg","what":"Markt der Engel on the Neumarkt at night","credit":"Photo: Superbass / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:2017-12-19-Markt_der_Engel_Neumarkt-1344.jpg","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"hafen.jpg","what":"Hafen-Weihnachtsmarkt stalls, Rheinauhafen","credit":"Photo: Jorge Franganillo / Wikimedia Commons, CC BY 2.0","url":"https://commons.wikimedia.org/wiki/File:K%C3%B6lner_Hafen-Weihnachtsmarkt_(52615674618).jpg","licUrl":"https://creativecommons.org/licenses/by/2.0"},{"f":"eisbahn.jpg","what":"Heinzels Wintermärchen ice rink on the Heumarkt at night","credit":"Photo: Superbass / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:2025-12-22-Heumarkt-060732.jpg","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"dom-inside.jpg","what":"Inside Cologne Cathedral, the nave","credit":"Photo: Frank Vincentz / Wikimedia Commons, CC BY-SA 3.0","url":"https://commons.wikimedia.org/wiki/File:K%C3%B6ln_-_Dom_in_01_ies.jpg","licUrl":"https://creativecommons.org/licenses/by-sa/3.0"},{"f":"therme.jpg","what":"Claudius Therme thermal pools, Cologne-Deutz","credit":"Photo: Maksym Kozlenko / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:2008-07-30_Claudius_Therme.jpg","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"aachen.jpg","what":"Aachen Christmas market at the town hall","credit":"Photo: ArthurMcGill / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:Aachener_Weihnachtsmarkt_2025.jpg","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"duesseldorf.jpg","what":"Düsseldorf Altstadt Christmas market at the Burgplatz","credit":"Photo: Supercarwaar / Wikimedia Commons, CC BY-SA 4.0","url":"https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf_2014_christmas_market.jpg","licUrl":"https://creativecommons.org/licenses/by-sa/4.0"},{"f":"hbf.jpg","what":"Köln Hauptbahnhof train shed and the Dom in snow","credit":"Photo: Harold R Cologne / Wikimedia Commons, CC BY-SA 3.0","url":"https://commons.wikimedia.org/wiki/File:Heavenly_Cologne.JPG","licUrl":"https://creativecommons.org/licenses/by-sa/3.0"},{"f":"airport.jpg","what":"Köln Bonn Airport, Terminal 1","credit":"Photo: Dirk Vorderstraße / Wikimedia Commons, CC BY 2.0","url":"https://commons.wikimedia.org/wiki/File:Terminal_(10583451894).jpg","licUrl":"https://creativecommons.org/licenses/by/2.0"},{"f":"schildergasse.jpg","what":"Hohe Straße shopping street at dusk, Dom spires behind","credit":"Photo: Jorge Franganillo / Wikimedia Commons, CC BY 4.0","url":"https://commons.wikimedia.org/wiki/File:Cologne_-_Hohe_Stra%C3%9Fe.jpg","licUrl":"https://creativecommons.org/licenses/by/4.0"},{"f":"market-food.jpg","what":"Christmas market food (Saturday dinner card)","credit":"AI-generated illustration, made for this board","url":"#","licUrl":""}];
     function renderExtras() {
       const host = document.getElementById("extrasHost"); if (!host) return;
       const cards = DETAILS.filter(d => d.kind === "extra").map(d => `<button type="button" class="xtra-card" data-detail="${d.id}"><span class="xtra-ic">${escapeHtml(d.icon)}</span><span class="xtra-t"><b>${escapeHtml(d.name)}</b><small>${escapeHtml(d.tag)}</small></span><span class="xtra-go">Open ›</span></button>`).join("");
@@ -3148,10 +3169,17 @@
     // keyword rules (for example "tea" or "coast") from assigning the wrong
     // artwork and guarantees every itinerary card has a deliberate image.
     const EXACT_SCENE = {
-      "fly london → cologne (friday evening)": "hohenzollern.jpg",
+      "fly london → cologne (friday evening)": "airport.jpg",
+      "cathedral market while it's calm": "dom-market.jpg",
+      "cathedral south tower climb": "dom-inside.jpg",
+      "hohe straße + schildergasse shops": "schildergasse.jpg",
+      "stadtgarten craft market + lunch": "stadtgarten.jpg",
+      "heinzels wintermärchen + ice rink after dark": "eisbahn.jpg",
+      "market food dinner (heinzels food alleys)": "market-food.jpg",
+      "inside the kölner dom": "dom-inside.jpg",
       "check in + last-hour glühwein at the dom market": "dom-market.jpg",
       "cathedral market · am kölner dom": "dom-market.jpg",
-      "harbour market (rheinauhafen)": "schoko.jpg",
+      "harbour market (rheinauhafen)": "hafen.jpg",
       "museum ludwig or the chocolate museum": "ludwig.jpg",
       "brauhaus lunch + kölsch (old town)": "brauhaus.jpg",
       "check in + first glühwein at the dom market": "dom-market.jpg",
@@ -3168,8 +3196,8 @@
       "museum ludwig (or a slow breakfast)": "ludwig.jpg",
       "last glühwein + mug swap at the cathedral market": "dom-market.jpg",
       "market no. 3 · the crew's pick (activity market vote)": "engel.jpg",
-      "collect bags + train köln hbf → düsseldorf airport": "hohenzollern.jpg",
-      "fly düsseldorf → heathrow (eurowings, if booked)": "hohenzollern.jpg"
+      "collect bags + train köln hbf → düsseldorf airport": "hbf.jpg",
+      "fly düsseldorf → heathrow (eurowings, if booked)": "airport.jpg"
     };
 
     function sceneForItem(it) {
@@ -3199,6 +3227,10 @@
         [/stadtgarten/, "Local crowd · DJs some evenings"],
         [/hohenzollern|blue hour/, "Aim for 16:30–17:00 · sunset is early in December"],
         [/harbour|hafen|chocolate/, "Quieter in the Saturday crush window"],
+        [/market food/, "Reibekuchen, Flammlachs, Glühwein · tap for the list"],
+        [/after dark/, "Rink lit till 21:45 · book skates online"],
+        [/schildergasse/, "Shops open till about 20:00 Saturdays"],
+        [/inside the kölner dom/, "Free to enter · services take priority on Sundays"],
         [/market no\. 3/, "Engel, Nikolausdorf, Stadtgarten or harbour"],
         [/heinzel|alter markt|heumarkt/, "Two squares joined up · ice rink on Heumarkt"],
         [/cathedral market|dom market|glühwein/, "Busiest market · cash for the mug deposit"],
