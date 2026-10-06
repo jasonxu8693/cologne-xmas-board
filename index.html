@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cologne Christmas Markets · Crew Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink: #f5f8ff;
@@ -924,12 +927,187 @@
     @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
     .app, .dock { position: relative; z-index: 1; }
     .hero h1 .shine { background: linear-gradient(90deg, #ffd27a, #ff6b6b, #fff3d6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* ==== Christmas pass (Oct 2026): Kölner Weihnachtsmarkt by night ====
+       Pine-dark surfaces, candle-gold actions, cranberry ribbon accents, snow on every roof.
+       Red stays decorative (bulbs, ribbon, knit band); actions are gold. */
+    :root {
+      --pine-950: #06110c; --pine-900: #0a1c14; --pine-800: #10281d; --pine-700: #183a2a;
+      --cranberry: #c42f3c; --cranberry-deep: #8e1b27;
+      --candle: #f6c560; --candle-deep: #e3a43a;
+      --cream: #fbf3e4;
+      --ink: #fbf6ec;
+      --muted: rgba(251, 246, 236, 0.78);
+      --subtle: rgba(251, 246, 236, 0.60);
+      --line: rgba(246, 197, 96, 0.18);
+      --gold: #f6c560;
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --snowcap: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='16' viewBox='0 0 160 16'%3E%3Cpath d='M0 0H160V7Q154 13 146 9T130 10Q124 15 116 9T98 8Q90 14 82 9T64 10Q58 13 50 8T32 9Q24 15 16 9T0 7Z' fill='%23cfdcea'/%3E%3Cpath d='M0 0H160V5Q154 10 146 7T130 8Q124 12 116 7T98 6Q90 11 82 7T64 8Q58 11 50 6T32 7Q24 12 16 7T0 5Z' fill='%23fdfcf8'/%3E%3C/svg%3E");
+      --knit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='26' viewBox='0 0 28 26'%3E%3Crect width='28' height='26' fill='%23a51f2c'/%3E%3Crect y='0' width='28' height='2' fill='%237a1520'/%3E%3Crect y='24' width='28' height='2' fill='%237a1520'/%3E%3Ccircle cx='7' cy='5' r='1.5' fill='%23fbf3e4'/%3E%3Ccircle cx='21' cy='5' r='1.5' fill='%23fbf3e4'/%3E%3Cpath d='M0 17L7 10L14 17L21 10L28 17V19.5L21 12.5L14 19.5L7 12.5L0 19.5Z' fill='%23fbf3e4'/%3E%3Ccircle cx='0' cy='22' r='1.3' fill='%23f6c560'/%3E%3Ccircle cx='14' cy='22' r='1.3' fill='%23f6c560'/%3E%3Ccircle cx='28' cy='22' r='1.3' fill='%23f6c560'/%3E%3C/svg%3E");
+    }
+    body {
+      background:
+        radial-gradient(600px 420px at 12% 8%, rgba(246,197,96,0.13), transparent 70%),
+        radial-gradient(520px 380px at 88% 22%, rgba(196,47,60,0.16), transparent 70%),
+        radial-gradient(700px 520px at 50% 100%, rgba(246,197,96,0.08), transparent 70%),
+        linear-gradient(170deg, #071510 0%, #0b2018 40%, #0d241b 70%, #06110c 100%);
+    }
+    /* market-light bokeh instead of the old tech grid */
+    body:before {
+      background-image:
+        radial-gradient(circle at 8% 22%, rgba(246,197,96,0.20) 0 3px, transparent 14px),
+        radial-gradient(circle at 31% 9%, rgba(255,140,120,0.16) 0 2px, transparent 12px),
+        radial-gradient(circle at 63% 15%, rgba(246,197,96,0.16) 0 2px, transparent 11px),
+        radial-gradient(circle at 92% 36%, rgba(255,240,210,0.14) 0 2px, transparent 12px),
+        radial-gradient(circle at 76% 62%, rgba(196,47,60,0.14) 0 3px, transparent 16px),
+        radial-gradient(circle at 18% 74%, rgba(246,197,96,0.12) 0 2px, transparent 12px);
+      background-size: 100% 100%;
+      mask-image: none;
+    }
+    body:after { display: none; }
+
+    /* Type: Fraunces for names and headings, Inter for everything you read */
+    .hero h1, .panel h2, .modal-card h2, .pack-head h3, #intel > .panel > h3, .info-card h3, .idea-title, .desk-title, .hub-title, .xtra-head h3, .vp-title, .vp-daytitle, .vpd-title, .dm-body h3 { font-family: var(--serif); }
+    .panel h2 { font-weight: 700; letter-spacing: -0.015em; font-size: 28px; }
+    .panel h3, .info-card h3, .idea-title, .desk-title { letter-spacing: -0.01em; font-weight: 700; }
+    #intel h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -0.01em; }
+
+    /* ---- Hero: photo, fairy-light garland, gingerbread heart ---- */
+    .hero {
+      border-color: rgba(246,197,96,0.28);
+      background:
+        linear-gradient(180deg, rgba(6,17,12,0.22) 0%, rgba(6,17,12,0.40) 42%, rgba(6,17,12,0.94) 100%),
+        linear-gradient(105deg, rgba(110,16,26,0.40), rgba(6,17,12,0.05) 60%),
+        url("images/hohenzollern.jpg") center 55% / cover no-repeat;
+    }
+    .hero:after { display: none; }
+    .hero-content { padding-top: 150px; }
+    .hero h1 { font-weight: 800; letter-spacing: -0.02em; line-height: 0.98; margin: 16px 0 14px; }
+    .hero h1 > span:first-child { display: block; color: var(--cream); }
+    .hero h1 .shine { font-style: italic; font-weight: 600; background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--candle); animation: none; text-shadow: 0 0 28px rgba(246,197,96,0.35), 0 4px 30px rgba(0,0,0,0.5); }
+    .eyebrow { background: rgba(6,17,12,0.62); border-color: rgba(246,197,96,0.30); color: var(--cream); backdrop-filter: none; font-weight: 600; }
+
+    .garland { position: absolute; left: 0; right: 0; top: 0; height: 64px; z-index: 2; pointer-events: none; }
+    .garland svg { position: absolute; inset: 0; width: 100%; height: 50px; overflow: visible; }
+    .garland path { fill: none; stroke: #1d2a20; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+    .bulb { position: absolute; width: 11px; height: 17px; margin-left: -5.5px; transform-origin: 50% 0; }
+    .bulb:before { content: ""; position: absolute; left: 3px; top: 0; width: 5px; height: 5px; border-radius: 1.5px; background: #3b3b33; }
+    .bulb:after { content: ""; position: absolute; left: 0; top: 4px; width: 11px; height: 13px; border-radius: 50% 50% 50% 50% / 42% 42% 58% 58%; background: var(--c); box-shadow: 0 0 10px 2px var(--c), 0 0 22px 4px color-mix(in srgb, var(--c) 45%, transparent); animation: twinkle var(--t, 2.6s) ease-in-out infinite; animation-delay: var(--d, 0s); }
+    @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+    .lebkuchen { position: absolute; top: 0; right: 7%; z-index: 3; width: 118px; transform-origin: 50% 0; animation: heartSwing 6s ease-in-out infinite; pointer-events: none; filter: drop-shadow(0 14px 18px rgba(0,0,0,0.45)); }
+    .lebkuchen svg { display: block; width: 100%; height: auto; }
+    @keyframes heartSwing { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+
+    .knit { height: 26px; margin: 14px 0 0; border-radius: 10px; background: var(--knit) repeat-x left center / 28px 26px; box-shadow: 0 8px 24px rgba(0,0,0,0.28), inset 0 0 0 1px rgba(0,0,0,0.25); }
+
+    /* ---- Glass cards in the hero ---- */
+    .glass { background: rgba(6,17,12,0.70); border-color: rgba(246,197,96,0.24); backdrop-filter: none; }
+    .countdown-card .big { background: none; color: var(--candle); -webkit-text-fill-color: var(--candle); font-family: var(--serif); font-weight: 700; letter-spacing: -0.02em; }
+    .cd-unit { color: var(--muted); -webkit-text-fill-color: var(--muted); }
+    .countdown-card:after { background: conic-gradient(from var(--ang), transparent 0 72%, rgba(246,197,96,0.9) 86%, rgba(196,47,60,0.7) 93%, transparent 100%); }
+    .label { color: rgba(246,197,96,0.85); letter-spacing: 0.12em; }
+    .pill.hot { color: #ffe1e3; border-color: rgba(196,47,60,0.5); background: rgba(196,47,60,0.22); }
+
+    /* ---- Buttons: candlelight, not cyan ---- */
+    .btn { color: #1a1206; background: linear-gradient(180deg, #f9d27a, var(--candle-deep)); box-shadow: 0 10px 26px rgba(227,164,58,0.28), inset 0 1px 0 rgba(255,255,255,0.45); font-weight: 750; }
+    .btn:hover { box-shadow: 0 16px 34px rgba(227,164,58,0.36), inset 0 1px 0 rgba(255,255,255,0.45); }
+    .btn.secondary { color: var(--cream); background: rgba(196,47,60,0.26); border: 1px solid rgba(232,110,120,0.45); box-shadow: none; }
+    .btn.ghost { color: var(--cream); background: rgba(6,17,12,0.45); border: 1px solid rgba(246,197,96,0.30); }
+    .btn:focus-visible, .nav button:focus-visible, .dock button:focus-visible, .vp-jbtn:focus-visible, .vp-daynode:focus-visible { outline: 2px solid var(--candle); outline-offset: 3px; }
+
+    /* ---- Nav: one system, gold for "you are here" ---- */
+    .nav { background: #0a1c14; border-color: rgba(246,197,96,0.22); backdrop-filter: none; }
+    .nav button, .nav button.plan-tab, .nav button.market-tab, .nav button.desk-tab { color: var(--muted); background: transparent; border: 1px solid transparent; font-weight: 700; }
+    .nav button:hover { color: var(--cream); }
+    .nav button.active, .nav button.plan-tab.active, .nav button.market-tab.active, .nav button.desk-tab.active { color: #1a1206; background: linear-gradient(180deg, #f9d27a, var(--candle-deep)); border-color: transparent; }
+    .nav .sync-chip { border-color: rgba(127,214,160,0.35); background: rgba(127,214,160,0.08); color: #d6f5e1; }
+
+    /* ---- Snow on every roof ---- */
+    .panel, .info-card, .idea-card, .desk-room, .vp-vp, .modal-card, .xtra-wrap { position: relative; }
+    .panel:before, .vp-vp:before, .modal-card:before, .xtra-wrap:before, .info-card:before, .idea-card:before, .desk-room:before {
+      content: ""; position: absolute; left: 0; right: 0; top: 0; width: auto; height: 15px; border-radius: 0;
+      background: var(--snowcap) repeat-x left top / 160px 15px; z-index: 4; pointer-events: none; opacity: 0.96;
+    }
+    .info-card:before, .idea-card:before, .desk-room:before { height: 11px; background-size: 120px 11px; opacity: 0.9; }
+    .panel.pad { padding-top: 26px; }
+    .modal-card { overflow: hidden; padding-top: 34px; }
+    .info-card { padding-top: 22px; }
+    .desk-room { padding-top: 22px; }
+
+    .panel { background: linear-gradient(180deg, rgba(20,48,35,0.82), rgba(9,24,17,0.90)); border-color: rgba(246,197,96,0.16); backdrop-filter: none; }
+    .info-card, .idea-card, .desk-room, .task-card, .plan-day, .hub-card, .mini-score, .flow-step, .roster-row, .traveller-row { background: rgba(251,243,228,0.045); border-color: rgba(251,243,228,0.12); }
+    .modal-card { background: linear-gradient(180deg, #123425, #0a1c14); border-color: rgba(246,197,96,0.35); }
+    .modal { background: rgba(4,12,8,0.82); }
+    .who-btn.me { border-color: rgba(246,197,96,0.6); background: rgba(246,197,96,0.14); }
+
+    /* ---- Itinerary: advent-calendar doors + baubles on a string ---- */
+    .vitin-modes { background: rgba(8,22,16,0.80); border-color: rgba(246,197,96,0.22); }
+    .vitin-mode.active { color: #1a1206; background: linear-gradient(180deg, #f9d27a, var(--candle-deep)); }
+    .vp-vp { background: linear-gradient(180deg, rgba(18,46,33,0.92), rgba(7,20,14,0.96)); border-color: rgba(246,197,96,0.22); }
+    .vp-slide { padding-top: 38px; }
+    .vp-eyebrow { color: rgba(246,197,96,0.85); }
+    .vp-title { color: var(--cream); font-weight: 800; }
+    .vp-sub { color: var(--candle); }
+    .vp-phase { background: rgba(6,17,12,0.45); border-color: rgba(246,197,96,0.16); }
+
+    .vp-days:before { top: 2px; left: 4%; right: 4%; border-top: 0; height: 26px; background:
+      radial-gradient(ellipse 50% 100% at 50% 0, transparent 92%, transparent),
+      none; border-bottom: 0; }
+    .vp-days { padding-top: 0; }
+    .vp-days .vp-garland { position: absolute; left: 0; top: 0; width: 100%; height: 30px; pointer-events: none; overflow: visible; }
+    .vp-days .vp-garland path { fill: none; stroke: rgba(246,197,96,0.55); stroke-width: 2; stroke-dasharray: 1 7; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+    .vp-daynode { padding-top: 34px; }
+    .vp-daynode:before { content: ""; position: absolute; top: 4px; left: 50%; width: 1.5px; height: 26px; background: rgba(246,197,96,0.7); }
+    .vp-bauble { position: relative; display: block; width: min(112px, 100%); }
+    .vp-bauble:before { content: ""; position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 22px; height: 11px; border-radius: 4px 4px 2px 2px; background: linear-gradient(180deg, #ffe3a1, #c8902e); box-shadow: 0 2px 4px rgba(0,0,0,0.4); z-index: 1; }
+    .vp-bauble .vp-daybead { width: 100%; border-width: 4px; box-shadow: 0 14px 28px -12px rgba(0,0,0,0.85), inset 0 0 0 2px rgba(255,255,255,0.15); }
+    .vp-door { position: absolute; right: -6px; bottom: -4px; min-width: 34px; height: 34px; padding: 0 6px; border-radius: 9px; display: grid; place-items: center; font-family: var(--serif); font-weight: 800; font-size: 19px; color: #1a1206; background: var(--cream); border: 2px dashed rgba(142,27,39,0.55); box-shadow: 0 6px 14px rgba(0,0,0,0.45); }
+    .vp-daynum { color: inherit; }
+
+    .vp-jump { gap: 8px; }
+    .vp-jbtn { border-color: rgba(246,197,96,0.24); background: rgba(8,22,16,0.7); color: var(--muted); min-height: 44px; }
+    .vp-jbtn.on { background: linear-gradient(180deg, #f9d27a, var(--candle-deep)); color: #1a1206; border-color: transparent; }
+    .vp-jbtn.door { display: inline-flex; align-items: center; gap: 8px; padding: 5px 13px 5px 5px; }
+    .vp-jbtn.door b { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; font-family: var(--serif); font-size: 17px; font-weight: 800; color: #1a1206; background: var(--cream); border: 1.5px dashed rgba(142,27,39,0.6); }
+    .vp-jbtn.door.on b { border-color: rgba(26,18,6,0.5); }
+    .vp-dot.on { background: var(--candle); }
+    .vp-arrow { min-width: 44px; min-height: 44px; border-color: rgba(246,197,96,0.3); }
+    .vp-num { background: var(--candle); }
+    .vp-detail, .vpd-card, .vpa-card { background: rgba(6,17,12,0.5); border-color: rgba(251,243,228,0.12); }
+    .vpa-card { border-top: 2px solid rgba(246,197,96,0.45); }
+
+    /* ---- Mobile dock ---- */
+    @media (max-width: 620px) {
+      .dock { position: fixed; z-index: 60; background: rgba(8,22,16,0.96); border-color: rgba(246,197,96,0.28); backdrop-filter: none; }
+      .dock:before { content: ""; position: absolute; left: 14px; right: 14px; top: -5px; height: 5px; border-radius: 5px 5px 0 0; background: var(--knit) repeat-x left center / 20px 18px; }
+      .dock button { font-size: 10.5px; min-height: 48px; }
+      .dock button.active { color: #1a1206; background: linear-gradient(180deg, #f9d27a, var(--candle-deep)); }
+    }
+
+    @media (max-width: 980px) {
+      .lebkuchen { width: 104px; right: 4%; }
+    }
+    @media (max-width: 620px) {
+      .hero-content { padding-top: 112px; }
+      .lebkuchen { width: 92px; right: 14px; }
+      .garland { height: 50px; }
+      .knit { height: 20px; background-size: 22px 20px; margin-top: 10px; border-radius: 8px; }
+      .vp-days { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 8px; }
+      .vp-days:before { display: block; }
+      .vp-bauble { width: min(92px, 100%); }
+      .vp-door { min-width: 28px; height: 28px; font-size: 15px; right: -4px; border-radius: 7px; }
+      .vp-dayname { font-size: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .bulb:after, .lebkuchen { animation: none !important; } }
   </style>
 </head>
 <body>
   <div class="snow" aria-hidden="true"><i style="left:0%;animation-duration:9s;animation-delay:-0s;--dx:-30px;opacity:0.35;width:3px;height:3px"></i><i style="left:37%;animation-duration:16s;animation-delay:-13s;--dx:-1px;opacity:0.52;width:8px;height:8px"></i><i style="left:74%;animation-duration:12s;animation-delay:-9s;--dx:28px;opacity:0.69;width:7px;height:7px"></i><i style="left:11%;animation-duration:19s;animation-delay:-5s;--dx:-3px;opacity:0.86;width:6px;height:6px"></i><i style="left:48%;animation-duration:15s;animation-delay:-1s;--dx:26px;opacity:0.43;width:5px;height:5px"></i><i style="left:85%;animation-duration:11s;animation-delay:-14s;--dx:-5px;opacity:0.60;width:4px;height:4px"></i><i style="left:22%;animation-duration:18s;animation-delay:-10s;--dx:24px;opacity:0.77;width:3px;height:3px"></i><i style="left:59%;animation-duration:14s;animation-delay:-6s;--dx:-7px;opacity:0.94;width:8px;height:8px"></i><i style="left:96%;animation-duration:10s;animation-delay:-2s;--dx:22px;opacity:0.51;width:7px;height:7px"></i><i style="left:33%;animation-duration:17s;animation-delay:-15s;--dx:-9px;opacity:0.68;width:6px;height:6px"></i><i style="left:70%;animation-duration:13s;animation-delay:-11s;--dx:20px;opacity:0.85;width:5px;height:5px"></i><i style="left:7%;animation-duration:9s;animation-delay:-7s;--dx:-11px;opacity:0.42;width:4px;height:4px"></i><i style="left:44%;animation-duration:16s;animation-delay:-3s;--dx:18px;opacity:0.59;width:3px;height:3px"></i><i style="left:81%;animation-duration:12s;animation-delay:-16s;--dx:-13px;opacity:0.76;width:8px;height:8px"></i><i style="left:18%;animation-duration:19s;animation-delay:-12s;--dx:16px;opacity:0.93;width:7px;height:7px"></i><i style="left:55%;animation-duration:15s;animation-delay:-8s;--dx:-15px;opacity:0.50;width:6px;height:6px"></i><i style="left:92%;animation-duration:11s;animation-delay:-4s;--dx:14px;opacity:0.67;width:5px;height:5px"></i><i style="left:29%;animation-duration:18s;animation-delay:-0s;--dx:-17px;opacity:0.84;width:4px;height:4px"></i><i style="left:66%;animation-duration:14s;animation-delay:-13s;--dx:12px;opacity:0.41;width:3px;height:3px"></i><i style="left:3%;animation-duration:10s;animation-delay:-9s;--dx:-19px;opacity:0.58;width:8px;height:8px"></i><i style="left:40%;animation-duration:17s;animation-delay:-5s;--dx:10px;opacity:0.75;width:7px;height:7px"></i><i style="left:77%;animation-duration:13s;animation-delay:-1s;--dx:-21px;opacity:0.92;width:6px;height:6px"></i><i style="left:14%;animation-duration:9s;animation-delay:-14s;--dx:8px;opacity:0.49;width:5px;height:5px"></i><i style="left:51%;animation-duration:16s;animation-delay:-10s;--dx:-23px;opacity:0.66;width:4px;height:4px"></i><i style="left:88%;animation-duration:12s;animation-delay:-6s;--dx:6px;opacity:0.83;width:3px;height:3px"></i><i style="left:25%;animation-duration:19s;animation-delay:-2s;--dx:-25px;opacity:0.40;width:8px;height:8px"></i><i style="left:62%;animation-duration:15s;animation-delay:-15s;--dx:4px;opacity:0.57;width:7px;height:7px"></i><i style="left:99%;animation-duration:11s;animation-delay:-11s;--dx:-27px;opacity:0.74;width:6px;height:6px"></i><i style="left:36%;animation-duration:18s;animation-delay:-7s;--dx:2px;opacity:0.91;width:5px;height:5px"></i><i style="left:73%;animation-duration:14s;animation-delay:-3s;--dx:-29px;opacity:0.48;width:4px;height:4px"></i><i style="left:10%;animation-duration:10s;animation-delay:-16s;--dx:0px;opacity:0.65;width:3px;height:3px"></i><i style="left:47%;animation-duration:17s;animation-delay:-12s;--dx:29px;opacity:0.82;width:8px;height:8px"></i><i style="left:84%;animation-duration:13s;animation-delay:-8s;--dx:-2px;opacity:0.39;width:7px;height:7px"></i><i style="left:21%;animation-duration:9s;animation-delay:-4s;--dx:27px;opacity:0.56;width:6px;height:6px"></i><i style="left:58%;animation-duration:16s;animation-delay:-0s;--dx:-4px;opacity:0.73;width:5px;height:5px"></i><i style="left:95%;animation-duration:12s;animation-delay:-13s;--dx:25px;opacity:0.90;width:4px;height:4px"></i><i style="left:32%;animation-duration:19s;animation-delay:-9s;--dx:-6px;opacity:0.47;width:3px;height:3px"></i><i style="left:69%;animation-duration:15s;animation-delay:-5s;--dx:23px;opacity:0.64;width:8px;height:8px"></i><i style="left:6%;animation-duration:11s;animation-delay:-1s;--dx:-8px;opacity:0.81;width:7px;height:7px"></i><i style="left:43%;animation-duration:18s;animation-delay:-14s;--dx:21px;opacity:0.38;width:6px;height:6px"></i><i style="left:80%;animation-duration:14s;animation-delay:-10s;--dx:-10px;opacity:0.55;width:5px;height:5px"></i><i style="left:17%;animation-duration:10s;animation-delay:-6s;--dx:19px;opacity:0.72;width:4px;height:4px"></i></div>
   <div class="app">
     <header class="hero">
+      <div class="garland" id="heroGarland" aria-hidden="true"><svg viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M0 6 Q25 58 50 6 Q75 58 100 6"/></svg></div>
+      <div class="lebkuchen" aria-hidden="true"><svg viewBox="0 0 140 172"><path d="M70 0V40" stroke="#c42f3c" stroke-width="5"/><path d="M58 0L70 40L82 0" fill="none" stroke="#e8505d" stroke-width="2.5"/><defs><radialGradient id="gb" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#b8743c"/><stop offset="1" stop-color="#7a4321"/></radialGradient></defs><path d="M70 168C45 146 6 120 6 82C6 58 23 42 43 42C56 42 65 49 70 58C75 49 84 42 97 42C117 42 134 58 134 82C134 120 95 146 70 168Z" fill="url(#gb)"/><path d="M70 157C48 137 15 114 15 82C15 63 28 51 43 51C55 51 64 59 70 70C76 59 85 51 97 51C112 51 125 63 125 82C125 114 92 137 70 157Z" fill="none" stroke="#fbf3e4" stroke-width="3.5" stroke-dasharray="0.5 7" stroke-linecap="round"/><text x="70" y="98" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="700" font-size="25" fill="#fbf3e4">Köln</text><text x="70" y="121" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="12" letter-spacing="2" fill="#ffd0d4">DEZ 2026</text><circle cx="40" cy="74" r="3" fill="#c42f3c"/><circle cx="100" cy="74" r="3" fill="#3f8f5f"/><circle cx="70" cy="138" r="3" fill="#f6c560"/><circle cx="70" cy="40" r="5" fill="#f6c560" stroke="#7a4321" stroke-width="1.5"/></svg></div>
       <div class="hero-art" aria-hidden="true">
         <div class="moon"></div>
         <div class="dragon"><span class="wing"></span><span class="tail"></span><span class="body"></span><span class="head"></span></div>
@@ -940,9 +1118,9 @@
       </div>
       <div class="hero-content">
         <div>
-          <div class="eyebrow">🎄 Köln · Fri 4 → Sun 6 Dec 2026 · Thu 3 Dec early-arrival option</div>
+          <div class="eyebrow">🎄 Köln · Fri 4 → Sun 6 Dec 2026 · two nights</div>
           <h1><span>Cologne Christmas</span><span class="shine">market crew</span></h1>
-          <p>Seven of us, seven markets. Vote the plan, pick your arrival night, own a job.</p>
+          <p>Seven of us, one weekend. Fly in Friday night, two or three markets on Saturday, the city on Sunday, then home.</p>
           <div class="hero-actions">
             <button class="btn" data-jump="plan">🗓️ Itinerary</button>
             <button class="btn secondary" data-jump="ideas">🎯 Activity Market</button>
@@ -951,7 +1129,7 @@
         </div>
         <aside class="stat-card">
           <div class="glass countdown-card">
-            <div class="label">Countdown to Köln</div>
+            <div class="label">Sleeps till Köln</div>
             <div class="big"><span id="countdownDays">—</span></div>
             <div class="micro" id="countdownSub">Cologne Christmas markets · 4 → 6 Dec 2026</div>
             <div class="pill-row">
@@ -977,6 +1155,19 @@
         </aside>
       </div>
     </header>
+    <div class="knit" aria-hidden="true"></div>
+    <script>
+      // Fairy lights along the two swags of the hero garland (y follows the quadratic curve).
+      (function () {
+        var g = document.getElementById("heroGarland"); if (!g) return;
+        var n = Math.max(10, Math.min(24, Math.round(g.offsetWidth / 58))), cols = ["#ff5a5a", "#f6c560", "#7fe0a4", "#fff2d6", "#ff8f5a"], html = "";
+        for (var i = 0; i < n; i++) {
+          var x = (i + 0.5) / n, t = (x % 0.5) / 0.5, y = 6 + 104 * t * (1 - t);
+          html += '<span class="bulb" style="left:' + (x * 100).toFixed(2) + '%;top:' + (y - 1).toFixed(1) + 'px;--c:' + cols[i % cols.length] + ';--d:-' + ((i * 0.37) % 2.6).toFixed(2) + 's;--t:' + (2.2 + (i % 4) * 0.35).toFixed(2) + 's;transform:rotate(' + ((t - 0.5) * -28).toFixed(1) + 'deg)"></span>';
+        }
+        g.insertAdjacentHTML("beforeend", html);
+      })();
+    </script>
 
     <nav class="nav" aria-label="App sections">
       <button class="plan-tab active" data-tab="plan">🗓️ Itinerary</button>
@@ -1171,7 +1362,7 @@
             <div class="info-card"><div class="emoji">🚶</div><h3>Getting around</h3><p>The Old Town markets are all walkable from the cathedral. Neumarkt, Rudolfplatz and Stadtgarten are a longer walk west, or a short tram ride.</p><ul><li>Cologne Bonn airport → Köln Hbf: S-Bahn S19/S13, about 15–20 min.</li><li>Düsseldorf airport → Köln Hbf: SkyTrain to the airport station, then a train, about 40–55 min.</li></ul></div>
           </div>
 
-          <div class="info-card" style="margin-top:16px"><div class="emoji">🏨</div><h3>Nothing booked yet</h3><p>Flights and hotels are all still open. The options, prices and votes live in the <strong>Crew Desk</strong>. Prices there were checked on 6 Oct 2026 and move daily.</p><ul><li><strong>Arrival:</strong> Thursday 3 Dec night or Friday 4 Dec evening, vote in the Desk.</li><li><strong>Stay:</strong> central hotels near the cathedral, Fri + Sat (plus Thu for early arrivals).</li><li><strong>Home:</strong> Sunday 6 Dec, Eurowings Düsseldorf 18:20 is the value pick.</li></ul></div>
+          <div class="info-card" style="margin-top:16px"><div class="emoji">🏨</div><h3>Nothing booked yet</h3><p>Flights and hotels are all still open. The options, prices and votes live in the <strong>Crew Desk</strong>. Prices there were checked on 6 Oct 2026 and move daily.</p><ul><li><strong>Arrival:</strong> Friday 4 Dec evening, after work. Vote the flight in the Desk.</li><li><strong>Stay:</strong> central hotels near the cathedral, Fri + Sat.</li><li><strong>Home:</strong> Sunday 6 Dec, Eurowings Düsseldorf 18:20 is the value pick.</li></ul></div>
 
           <h3 style="margin:24px 0 12px">🆘 If something goes wrong</h3>
           <div class="grid-2">
@@ -1216,7 +1407,6 @@
               <label class="pack-item"><input type="checkbox" data-pack="adapter"><span>EU plug adapter</span></label>
               <label class="pack-item"><input type="checkbox" data-pack="roaming"><span>Roaming or eSIM sorted</span></label>
               <label class="pack-item"><input type="checkbox" data-pack="apps"><span>DB Navigator and KVB apps downloaded</span></label>
-              <label class="pack-item"><input type="checkbox" data-pack="laptop"><span>Laptop + charger (Thu-night crew working Friday)</span></label>
             </div></div>
             <div class="info-card pack-card"><div class="emoji">🎒</div><h3>Bag</h3><div class="pack-list">
               <label class="pack-item"><input type="checkbox" data-pack="backpack"><span>Backpack that fits the airline's under-seat size</span></label>
@@ -1289,7 +1479,7 @@
     // group's current stop and they all advance together as bosses get cleared.
     const checkpoints = [
       { id: "spawn", title: "Trip start", meta: "Go", icon: "🎄", type: "personal", x: 10.5, y: 82 },
-      { id: "arrivalNight", title: "Thu night or Fri?", meta: "Boss 1", icon: "🌙", type: "group", x: 22, y: 61 },
+      { id: "arrivalNight", title: "Friday flight", meta: "Boss 1", icon: "🛬", type: "group", x: 22, y: 61 },
       { id: "flights", title: "Book the flights", meta: "Boss 2", icon: "✈️", type: "group", x: 42, y: 22 },
       { id: "accommodation", title: "Book the stay", meta: "Boss 3", icon: "🏨", type: "boss", x: 63, y: 31 },
       { id: "activityShortlist", title: "Market shortlist", meta: "Boss 4", icon: "🎯", type: "group", x: 74, y: 45 },
@@ -1317,7 +1507,7 @@
     const TRIP_START = new Date(2026, 11, 4, 18, 0); // Fri 4 Dec 2026, evening arrivals (month is 0-indexed)
 
     const defaultIdeas = [
-      { id: "domMarket", emoji: "⛪", title: "Cathedral market · Am Kölner Dom", city: "Old Town", img: "dom-market.jpg", desc: "The famous one, right under the cathedral spires with the big tree and the canopy of lights. Busiest of the lot. Open till 22:00 Thu to Sat." },
+      { id: "domMarket", emoji: "⛪", title: "Cathedral market · Am Kölner Dom", city: "Old Town", img: "dom-market.jpg", desc: "The famous one, right under the cathedral spires with the big tree and the canopy of lights. Busiest of the lot. Open till 22:00 on Friday and Saturday." },
       { id: "heinzels", emoji: "⛸️", title: "Heinzels Wintermärchen · Alter Markt + Heumarkt", city: "Old Town", img: "heinzels.jpg", desc: "The Old Town market built around Cologne's Heinzelmännchen elves legend, spread over two squares. Ice rink and curling lanes on Heumarkt." },
       { id: "engel", emoji: "👼", title: "Markt der Engel · Neumarkt", city: "Centre", img: "engel.jpg", desc: "The 'angels' market: white tents under thousands of fairy lights, more elegant and a touch calmer than the Dom." },
       { id: "hafen", emoji: "⚓", title: "Harbour market + Chocolate Museum", city: "Rheinauhafen", img: "schoko.jpg", desc: "Maritime-themed market on the Rhine next to the Lindt Chocolate Museum. Less touristy, good for the busy Saturday evening window." },
@@ -1342,9 +1532,12 @@
     const GF = (from, to, date) => `https://www.google.com/travel/flights?q=${encodeURIComponent(`one way flights from ${from} to ${to} on ${date}`)}&curr=GBP&hl=en-GB`;
     const defaultDesk = {
       rooms: [
-        { id: "arrival_night", taskId: "arrivalNight", emoji: "🌙", kind: "custom", title: "Arrive Thursday night or Friday evening?", desc: "Nobody is flying on a weekday morning, so it's one of these two. Vote below, and set your own plan in Crew flights on the Itinerary tab. People can split: Thu-night arrivals work Friday from the hotel.", owners: [], options: [
-          { id: "arr_thu", by: null, researcher: "Jason", title: "Thursday 3 Dec night · 3 nights", link: GF("London", "Cologne", "2026-12-03"), price: "Flights from £66 pp one way + one extra hotel night (about £60–£95 pp sharing a double)", availability: "Recommended by Jason's planner", availabilityTone: "done", notes: "Fly after work Thursday, work Friday from the hotel, and get Friday night at the markets.", verdict: "Best value per market hour: Thursday fares are about the same as Friday's, so the real cost is one hotel night. In return you get Friday night at the markets (they close 22:00), which the Friday flyers mostly miss.", facts: [{ label: "BA Heathrow → Cologne Bonn", value: "17:05 → 19:30 · £122 · in town ~20:15" }, { label: "Eurowings Gatwick → Cologne Bonn", value: "19:50 → 22:10 · £112" }, { label: "Eurowings Heathrow → Düsseldorf", value: "19:30 → 21:55 · £67 · in town ~23:10" }, { label: "Ryanair Stansted → Cologne Bonn", value: "21:20 → 23:35 · £66 · very late" }, { label: "Eurostar St Pancras → Köln Hbf", value: "17:04 → 22:22 · £158 (change Brussels)" }, { label: "Extra hotel night (Thu)", value: "Central 3–4★ double about £120–£190 per room on Booking.com" }], photos: [], photoNote: "Tap the title for live fares on Google Flights.", warning: "Only works if you can work remotely on Friday. Pick a hotel with a proper desk and decent wifi.", source: "Google Flights and eurostar.com, one way per person, checked 6 Oct 2026 · Booking.com Thu 3 Dec, 2 adults, 1 room, within 1 km of the cathedral · fares move daily", votes: {} },
-          { id: "arr_fri", by: null, researcher: "Jason", title: "Friday 4 Dec evening · 2 nights", link: GF("London", "Cologne", "2026-12-04"), price: "Flights from £67 pp one way, no extra night", availability: "Cheapest overall", availabilityTone: "warn", notes: "Leave work around 16:00 and fly Friday evening.", verdict: "Cheapest, but Friday is mostly lost: the earliest sensible flight lands about 20:15, so you get roughly an hour at the markets before they close at 22:00.", facts: [{ label: "Ryanair Stansted → Cologne Bonn", value: "18:00 → 20:15 · £106 · in town ~21:00" }, { label: "BA Heathrow → Düsseldorf", value: "17:15 → 19:40 · £172" }, { label: "Eurowings Heathrow → Düsseldorf", value: "19:30 → 21:55 · £67 · in town ~23:10" }, { label: "Eurowings Gatwick → Cologne Bonn", value: "19:50 → 22:10 · £155" }, { label: "Eurostar St Pancras → Köln Hbf", value: "17:04 → 22:22 · £181.50 (change Brussels)" }], photos: [], photoNote: "Tap the title for live fares on Google Flights.", warning: "Late Düsseldorf arrivals still need a 40 to 55 min train into Cologne.", source: "Google Flights and eurostar.com, one way per person, checked 6 Oct 2026 · fares move daily", votes: {} }
+        { id: "flight_out", taskId: "arrivalNight", emoji: "🛬", kind: "custom", title: "Friday 4 Dec flight out", desc: "We fly Friday after work. Everyone books their own seat, but landing together is easier. Vote for the flight, then add yours in Crew flights on the Itinerary tab.", owners: [], options: [
+          { id: "out_stn_1800", by: null, researcher: "Jason", title: "Ryanair Stansted → Cologne Bonn · 18:00", link: GF("London", "Cologne", "2026-12-04"), price: "£106 pp", availability: "Earliest into town", availabilityTone: "done", notes: "Lands 20:15. S-Bahn to Köln Hbf, in town about 21:00.", verdict: "Best for Friday night: about an hour at the markets before they close at 22:00.", facts: [{ label: "Lands", value: "Cologne Bonn 20:15" }, { label: "In town", value: "~21:00" }], photos: [], photoNote: "Tap the title for live fares on Google Flights.", source: "Google Flights and eurostar.com, one way per person, checked 6 Oct 2026 · fares move daily", votes: {} },
+          { id: "out_lhr_dus_1715", by: null, researcher: "Jason", title: "BA Heathrow → Düsseldorf · 17:15", link: GF("London", "Cologne", "2026-12-04"), price: "£172 pp", availability: "Earliest landing", availabilityTone: "warn", notes: "Lands Düsseldorf 19:40, then the train into Cologne.", verdict: "Lands first, but the Düsseldorf train and the price eat the head start.", facts: [{ label: "Lands", value: "Düsseldorf 19:40" }], photos: [], photoNote: "Tap the title for live fares on Google Flights.", warning: "Düsseldorf arrivals still need a 40 to 55 min train into Cologne.", source: "Google Flights and eurostar.com, one way per person, checked 6 Oct 2026 · fares move daily", votes: {} },
+          { id: "out_lhr_dus_1930", by: null, researcher: "Jason", title: "Eurowings Heathrow → Düsseldorf · 19:30", link: GF("London", "Cologne", "2026-12-04"), price: "£67 pp", availability: "Cheapest", availabilityTone: "done", notes: "Lands 21:55, in town about 23:10.", verdict: "Cheapest by far, but you miss Friday at the markets.", facts: [{ label: "Lands", value: "Düsseldorf 21:55" }, { label: "In town", value: "~23:10" }], photos: [], photoNote: "Tap the title for live fares on Google Flights.", warning: "Düsseldorf arrivals still need a 40 to 55 min train into Cologne.", source: "Google Flights and eurostar.com, one way per person, checked 6 Oct 2026 · fares move daily", votes: {} },
+          { id: "out_lgw_cgn_1950", by: null, researcher: "Jason", title: "Eurowings Gatwick → Cologne Bonn · 19:50", link: GF("London", "Cologne", "2026-12-04"), price: "£155 pp", availability: "Available", availabilityTone: "warn", notes: "Lands 22:10, after the markets close.", verdict: "Gatwick option, late arrival.", facts: [{ label: "Lands", value: "Cologne Bonn 22:10" }], photos: [], photoNote: "Tap the title for live fares on Google Flights.", source: "Google Flights and eurostar.com, one way per person, checked 6 Oct 2026 · fares move daily", votes: {} },
+          { id: "out_eurostar_1704", by: null, researcher: "Jason", title: "Eurostar St Pancras → Köln Hbf · 17:04", link: GF("London", "Cologne", "2026-12-04"), price: "£181.50 pp", availability: "Centre to centre, change in Brussels", availabilityTone: "warn", notes: "Arrives Köln Hbf 22:22, no airport.", verdict: "Nicest journey, but the priciest and lands after the markets shut.", facts: [{ label: "Arrives", value: "Köln Hbf 22:22" }], photos: [], photoNote: "Tap the title for live fares on Google Flights.", source: "Google Flights and eurostar.com, one way per person, checked 6 Oct 2026 · fares move daily", votes: {} }
         ], status: "open", chosen: null },
         { id: "flights_home", taskId: "flights", emoji: "🛫", kind: "custom", title: "Sunday 6 Dec flight home", desc: "Everyone books their own seat, but flying home together is easier. Vote for the flight, then add yours in Crew flights.", owners: [], options: [
           { id: "home_dus_1820", by: null, researcher: "Jason", title: "Eurowings Düsseldorf → Heathrow · 18:20", link: GF("Dusseldorf", "London", "2026-12-06"), price: "£65 pp", availability: "Cheapest, keeps most of Sunday", availabilityTone: "done", notes: "Leave Köln Hbf about 16:00 by train to Düsseldorf Flughafen (40 to 55 min incl. SkyTrain). Lands Heathrow 18:45.", verdict: "Best value: cheapest fare and you still get most of Sunday in Cologne.", facts: [{ label: "Leave Köln Hbf", value: "~16:00" }, { label: "Lands", value: "Heathrow 18:45" }, { label: "Bag", value: "Under-seat bag only on the basic fare" }], photos: [], warning: "Depends on a German train to the airport. If DB is disrupted, the BA 15:55 from Cologne Bonn is the fallback.", source: "Google Flights, checked 6 Oct 2026", votes: {} },
@@ -1353,12 +1546,12 @@
           { id: "home_eurostar", by: null, researcher: "Jason", title: "Eurostar Köln Hbf → St Pancras · 16:43", link: "https://www.eurostar.com/uk-en", price: "£189.50 pp", availability: "Centre to centre, change in Brussels", availabilityTone: "warn", notes: "No airport. Arrives St Pancras 21:57.", verdict: "Nicest journey, roughly triple the cheapest flight.", facts: [{ label: "Depart", value: "Köln Hbf 16:43" }, { label: "Arrive", value: "St Pancras 21:57" }], photos: [], source: "eurostar.com, Standard, checked 6 Oct 2026", votes: {} }
         ], status: "open", chosen: null },
         { id: "stay_cologne", taskId: "accommodation", emoji: "🏨", kind: "accom", title: "Where we stay · Fri 4 to Sun 6 Dec", desc: "Hotels within 1 km of the cathedral. Prices are for one double room for both nights (two people sharing, so halve it per person). Seven of us means about three doubles plus one single, or a big apartment (not searched yet). Weekend prices are already high, so book early.", owners: [], options: [
-          { id: "st_maritim", by: null, researcher: "Live search", title: "Maritim Hotel Köln", link: BK("maritim-koln"), price: "£448 per room, 2 nights (~£224 pp)", availability: "Cheapest central 4★ found", availabilityTone: "done", notes: "Heumarkt, by Heinzels Wintermärchen and the Rhine. 8.1 on 10,000+ reviews.", verdict: "Value: cheapest of the central hotels and you can walk out onto the Heumarkt market.", facts: [{ label: "Thu 3 Dec add-on", value: "£184 per room" }, { label: "Walk to Dom", value: "~10 min" }], photos: [], source: "Booking.com, 2 adults, 1 room, checked 6 Oct 2026 · rates change", votes: {} },
+          { id: "st_maritim", by: null, researcher: "Live search", title: "Maritim Hotel Köln", link: BK("maritim-koln"), price: "£448 per room, 2 nights (~£224 pp)", availability: "Cheapest central 4★ found", availabilityTone: "done", notes: "Heumarkt, by Heinzels Wintermärchen and the Rhine. 8.1 on 10,000+ reviews.", verdict: "Value: cheapest of the central hotels and you can walk out onto the Heumarkt market.", facts: [{ label: "Walk to Dom", value: "~10 min" }], photos: [], source: "Booking.com, 2 adults, 1 room, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_motelone", by: null, researcher: "Live search", title: "Motel One Köln-Neumarkt", link: BK("motel-one-koln-neumarkt"), price: "£474 per room, 2 nights (~£237 pp)", availability: "Available", availabilityTone: "done", notes: "On Neumarkt, right at Markt der Engel.", verdict: "Design budget chain, small rooms, great for the angels market.", facts: [{ label: "Walk to Dom", value: "~15 min" }], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
-          { id: "st_18arts", by: null, researcher: "Live search", title: "18Arts Hotel", link: BK("18arts"), price: "£495 per room, 2 nights (~£248 pp)", availability: "Available", availabilityTone: "done", notes: "Art hotel near the Old Town. 8.4 rating.", verdict: "Cheapest Thursday add-on found.", facts: [{ label: "Thu 3 Dec add-on", value: "£120 per room" }], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
-          { id: "st_lindner", by: null, researcher: "Live search", title: "Lindner Hotel Cologne Am Dom (JdV by Hyatt)", link: BK("lindner-city-plaza"), price: "£499 per room, 2 nights (~£250 pp)", availability: "Available", availabilityTone: "done", notes: "Near the cathedral, indoor pool. 8.3 on 4,900 reviews.", verdict: "Mid-price all-rounder with a pool for thawing out.", facts: [{ label: "Thu 3 Dec add-on", value: "£161 per room" }], photos: [], warning: "Check the Booking.com link lands on this exact property before booking.", source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
+          { id: "st_18arts", by: null, researcher: "Live search", title: "18Arts Hotel", link: BK("18arts"), price: "£495 per room, 2 nights (~£248 pp)", availability: "Available", availabilityTone: "done", notes: "Art hotel near the Old Town. 8.4 rating.", verdict: "Highest guest rating of the hotels with a score listed (8.4).", facts: [], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
+          { id: "st_lindner", by: null, researcher: "Live search", title: "Lindner Hotel Cologne Am Dom (JdV by Hyatt)", link: BK("lindner-city-plaza"), price: "£499 per room, 2 nights (~£250 pp)", availability: "Available", availabilityTone: "done", notes: "Near the cathedral, indoor pool. 8.3 on 4,900 reviews.", verdict: "Mid-price all-rounder with a pool for thawing out.", facts: [], photos: [], warning: "Check the Booking.com link lands on this exact property before booking.", source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_mondial", by: null, researcher: "Live search", title: "Hotel Mondial am Dom (MGallery)", link: BK("mondial-am-dom-koln"), price: "£645 per room, 2 nights (~£323 pp)", availability: "Available", availabilityTone: "warn", notes: "Two minutes from the Dom market. Was the original shortlist pick.", verdict: "Best location, premium price.", facts: [{ label: "Walk to Dom", value: "~2 min" }], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
-          { id: "st_malzmuehle", by: null, researcher: "Live search", title: "Hotel zur Malzmühle (brauhaus hotel)", link: BK("zur-malzmuhle"), price: "£710 per room, 2 nights (~£355 pp)", availability: "Available", availabilityTone: "warn", notes: "Rooms above a working brauhaus in the Old Town. 8.3 rating.", verdict: "Most Cologne experience, priciest weekend rate. Interesting because its Thursday rate is low.", facts: [{ label: "Thu 3 Dec add-on", value: "£126 per room" }], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} }
+          { id: "st_malzmuehle", by: null, researcher: "Live search", title: "Hotel zur Malzmühle (brauhaus hotel)", link: BK("zur-malzmuhle"), price: "£710 per room, 2 nights (~£355 pp)", availability: "Available", availabilityTone: "warn", notes: "Rooms above a working brauhaus in the Old Town. 8.3 rating.", verdict: "Most Cologne experience, priciest weekend rate.", facts: [], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} }
         ], status: "open", chosen: null },
         { id: "dinner_sat", taskId: "foodBars", emoji: "🍺", kind: "dinner", title: "Saturday 5 Dec group dinner for seven", desc: "A walk-in table for seven at a brauhaus on a December Saturday is a gamble. Decide: book one, or split into smaller groups and walk in.", owners: [], options: [
           { id: "din_frueh", by: null, researcher: "Shortlist", title: "Früh am Dom", link: "https://www.google.com/maps/search/?api=1&query=Fr%C3%BCh+am+Dom+K%C3%B6ln", price: "Not checked", availability: "Big classic beer hall by the cathedral", availabilityTone: "done", notes: "The default brauhaus. Huge, loud, Kölsch on tap.", verdict: "Most likely to fit seven.", facts: [], photos: [], source: "Trip shortlist", votes: {} },
@@ -1366,50 +1559,53 @@
           { id: "din_peters", by: null, researcher: "Shortlist", title: "Peters Brauhaus", link: "https://www.google.com/maps/search/?api=1&query=Peters+Brauhaus+K%C3%B6ln", price: "Not checked", availability: "Old Town, near Alter Markt", availabilityTone: "done", notes: "Classic brauhaus food and Kölsch.", verdict: "Central, between the Old Town markets.", facts: [], photos: [], source: "Trip shortlist", votes: {} },
           { id: "din_haxenhaus", by: null, researcher: "Shortlist", title: "Haxenhaus zum Rheingarten", link: "https://www.google.com/maps/search/?api=1&query=Haxenhaus+zum+Rheingarten+K%C3%B6ln", price: "Not checked", availability: "Pork knuckle specialist on the Rhine", availabilityTone: "done", notes: "Right by Heumarkt.", verdict: "If the group wants the full Schweinshaxe experience.", facts: [], photos: [], source: "Trip shortlist", votes: {} }
         ], status: "open", chosen: null },
-        { id: "dinner_fri", taskId: "foodBars", emoji: "🥨", kind: "dinner", title: "Friday night food (Thu-night crew)", desc: "If some of us arrive Thursday, where do we eat Friday before the others land? Market food counts.", owners: [], options: [], status: "open", chosen: null },
         { id: "cash_mugs", taskId: "cashMugs", emoji: "☕", kind: "custom", title: "Cash, mug deposits and splitting costs", desc: "Many stalls are cash only and every Glühwein comes with a mug deposit (return it or keep it). Agree how we split shared costs, e.g. a Tricount or Splitwise group.", owners: [], options: [], status: "open", chosen: null }
       ]
     };
 
     // Itinerary builder — fixed trip skeleton; activities auto-slot onto these days.
     const TRIP_DAYS = [
-      { id: "d3", iso: "2026-12-03", date: "Thu 3 Dec", city: "Thu-night crew arrives", logistics: true, note: "Only for anyone taking the Thursday-night option. Fly after work, check in, first Glühwein if you land in time (Dom market open till 22:00)." },
-      { id: "d4", iso: "2026-12-04", date: "Fri 4 Dec", city: "Old Town markets", note: "Thu-night crew works from the hotel, then hits the markets. Friday flyers land in the evening. Markets close 22:00 on Fridays." },
-      { id: "d5", iso: "2026-12-05", date: "Sat 5 Dec", city: "The full market circuit", note: "The big day: cathedral in the morning, west-side markets after lunch, bridge at blue hour, harbour market in the crush window, group dinner." },
-      { id: "d6", iso: "2026-12-06", date: "Sun 6 Dec", city: "Nikolaustag → home", logistics: true, note: "St Nicholas Day. Shops are shut on Sundays, markets and museums open from 11:00. Last rounds, then the train to the airport." }
+      { id: "d4", iso: "2026-12-04", date: "Fri 4 Dec", city: "Fly in · first Glühwein", logistics: true, note: "Fly after work. The earliest sensible flight has you in town about 21:00: drop bags and catch the last hour at the cathedral market (open till 22:00 on Fridays)." },
+      { id: "d5", iso: "2026-12-05", date: "Sat 5 Dec", city: "Market day", note: "Two or three markets, not all seven: the cathedral market and Heinzels next door, then one more the crew picks in the Activity Market. Bridge at blue hour, then group dinner." },
+      { id: "d6", iso: "2026-12-06", date: "Sun 6 Dec", city: "Explore the city → home", logistics: true, note: "St Nicholas Day. Shops are shut on Sundays; markets and museums open from 11:00. Cathedral, a museum, a brauhaus lunch, one last mug, then the train to the airport." }
     ];
 
     // Seeded starter itinerary. Dropped in once, on first load of a board with an
     // empty plan; after that the group's edits win.
+    const SEED_VERSION = 3; // v2 (6 Oct): Thursday option dropped, Fri arrive / Sat markets / Sun city
     const KOREA_SEED = [
-      { dayId: "d3", time: "17:05", title: "Thu-night crew flies London → Cologne", emoji: "✈️", kind: "flight" },
-      { dayId: "d3", time: "20:30", title: "Check in + first Glühwein at the Dom market", emoji: "🍷" },
-      { dayId: "d4", time: "09:00", title: "Work from the hotel (Thu-night crew)", emoji: "💻" },
-      { dayId: "d4", time: "17:00", title: "Fri-evening crew flies London → Cologne", emoji: "✈️", kind: "flight" },
-      { dayId: "d4", time: "17:30", title: "Heinzels Wintermärchen + ice rink (Alter Markt / Heumarkt)", emoji: "⛸️" },
-      { dayId: "d4", time: "19:30", title: "Brauhaus dinner · Früh am Dom", emoji: "🍺", kind: "dinner" },
-      { dayId: "d4", time: "21:00", title: "Cathedral market as the late crew lands", emoji: "⛪" },
-      { dayId: "d5", time: "10:00", title: "Kölner Dom + south tower climb", emoji: "🧗" },
-      { dayId: "d5", time: "12:00", title: "Markt der Engel (Neumarkt) + lunch", emoji: "👼" },
-      { dayId: "d5", time: "14:00", title: "Nikolausdorf (Rudolfplatz) → Stadtgarten market", emoji: "🎅" },
+      { dayId: "d4", time: "18:00", title: "Fly London → Cologne (Friday evening)", emoji: "✈️", kind: "flight" },
+      { dayId: "d4", time: "21:00", title: "Check in + last-hour Glühwein at the Dom market", emoji: "🍷" },
+      { dayId: "d5", time: "10:30", title: "Cathedral market · Am Kölner Dom", emoji: "⛪" },
+      { dayId: "d5", time: "12:00", title: "Heinzels Wintermärchen + ice rink (Alter Markt / Heumarkt)", emoji: "⛸️" },
+      { dayId: "d5", time: "14:30", title: "Market no. 3 · the crew's pick (Activity Market vote)", emoji: "🗳️" },
       { dayId: "d5", time: "16:30", title: "Hohenzollern Bridge at blue hour", emoji: "🌉" },
-      { dayId: "d5", time: "17:30", title: "Harbour market + Chocolate Museum (Rheinauhafen)", emoji: "⚓" },
       { dayId: "d5", time: "19:30", title: "Saturday group dinner (brauhaus)", emoji: "🍺", kind: "dinner" },
-      { dayId: "d6", time: "10:00", title: "Museum Ludwig (or a slow breakfast)", emoji: "🎨" },
-      { dayId: "d6", time: "11:30", title: "Last round: Heinzels + cathedral market, mug swap", emoji: "☕" },
-      { dayId: "d6", time: "15:30", title: "Collect bags + train Köln Hbf → Düsseldorf Airport", emoji: "🚆" },
+      { dayId: "d6", time: "10:30", title: "Kölner Dom + south tower climb", emoji: "🧗" },
+      { dayId: "d6", time: "12:00", title: "Museum Ludwig or the Chocolate Museum", emoji: "🎨" },
+      { dayId: "d6", time: "13:30", title: "Brauhaus lunch + Kölsch (Old Town)", emoji: "🍺" },
+      { dayId: "d6", time: "14:45", title: "Last Glühwein + mug swap at the cathedral market", emoji: "☕" },
+      { dayId: "d6", time: "16:00", title: "Collect bags + train Köln Hbf → Düsseldorf Airport", emoji: "🚆" },
       { dayId: "d6", time: "18:20", title: "Fly Düsseldorf → Heathrow (Eurowings, if booked)", emoji: "✈️", kind: "flight" }
     ];
     function normalizePlan(plan) {
       const p = (plan && typeof plan === "object") ? plan : { generatedAt: null, items: [] };
       if (!Array.isArray(p.items)) p.items = [];
+      // v1 seeded a Thursday day (d3). Swap untouched v1 seed stops for the v2 plan and
+      // move anything the crew added on Thursday onto Friday.
+      if (p.seeded && p.seedVersion !== SEED_VERSION) {
+        p.items = p.items.filter(it => !(typeof it.id === "string" && /^seed\d*_\d+$/.test(it.id)));
+        p.items.forEach(it => { if (it.dayId === "d3") it.dayId = "d4"; });
+        p.seeded = false;
+      }
       if (!p.seeded) {
         const have = new Set(p.items.map(it => (it.title || "").trim().toLowerCase()));
         const add = KOREA_SEED
           .filter(s => !have.has(s.title.trim().toLowerCase()))
-          .map((s, i) => ({ id: `seed_${i}`, dayId: s.dayId, title: s.title, emoji: s.emoji || guessEmoji(s.title), city: "", kind: s.kind || "activity", note: "", time: s.time || "" }));
+          .map((s, i) => ({ id: `seed${SEED_VERSION}_${i}`, dayId: s.dayId, title: s.title, emoji: s.emoji || guessEmoji(s.title), city: "", kind: s.kind || "activity", note: "", time: s.time || "" }));
         p.items = p.items.concat(add);
         p.seeded = true;
+        p.seedVersion = SEED_VERSION;
       }
       return p;
     }
@@ -1444,7 +1640,7 @@
     };
 
     const groupTasks = [
-      { id: "arrivalNight", icon: "🌙", title: "Thursday night or Friday evening?", desc: "Vote on the arrival night and set your own plan in Crew flights.", priority: "P1" },
+      { id: "arrivalNight", icon: "🛬", title: "Pick the Friday flight", desc: "Vote on the Friday evening flight so we land together, then add yours in Crew flights.", priority: "P1" },
       { id: "flights", icon: "✈️", title: "Book flights", desc: "Everyone books their own out and back. Fares are rising, so don't sit on it.", priority: "P1" },
       { id: "accommodation", icon: "🏨", title: "Book the stay", desc: "Pick a hotel (or apartment) near the cathedral and agree the room split for seven.", priority: "P1" },
       { id: "activityShortlist", icon: "🎯", title: "Market shortlist", desc: "Vote in the Activity Market so the itinerary follows what the group wants.", priority: "P2" },
@@ -1466,7 +1662,7 @@
     }
     // Rooms deliberately taken off the Crew Desk. Removing a room from defaultDesk alone is not
     // enough: boards with synced state would keep it as a "custom" room.
-    const RETIRED_ROOM_IDS = [];
+    const RETIRED_ROOM_IDS = ["arrival_night", "dinner_fri"];
     // Options deliberately withdrawn from a room (same resurrection problem as rooms).
     const RETIRED_OPTION_IDS = [];
     function normalizeDeskRooms(stored) {
@@ -1759,10 +1955,10 @@
     // Which Crew Desk rooms belong under which group task. Custom rooms created
     // from a task carry a taskId field and match that way.
     const TASK_ROOM_MAP = {
-      arrivalNight: ["arrival_night"],
+      arrivalNight: ["flight_out"],
       flights: ["flights_home"],
       accommodation: ["stay_cologne"],
-      foodBars: ["dinner_sat", "dinner_fri"],
+      foodBars: ["dinner_sat"],
       cashMugs: ["cash_mugs"]
     };
     // Tasks whose "options" live on another tab rather than in desk rooms.
@@ -2023,7 +2219,7 @@
         if (ms > 0) {
           const mins = Math.floor(ms / 60000);
           const d = Math.floor(mins / 1440), h = Math.floor((mins % 1440) / 60), m = mins % 60;
-          daysEl.innerHTML = `${d}<span class="cd-unit">d</span>${h}<span class="cd-unit">h</span>${m}<span class="cd-unit">m</span>`;
+          daysEl.innerHTML = `${d}<span class="cd-unit">${d === 1 ? "sleep" : "sleeps"}</span>${h}<span class="cd-unit">h</span>${m}<span class="cd-unit">m</span>`;
           if (subEl) subEl.textContent = d >= 1 ? "until Cologne · Fri 4 Dec 2026" : "Cologne is basically today — pack the gloves 🧤";
         } else {
           daysEl.textContent = "In Köln 🎄";
@@ -2842,44 +3038,39 @@
     }
 
     // ---- Visual itinerary: illustrated poster carousel (overview + per-day slides) ----
-    const DAY_ACCENT = { d3: "#7fd6a0", d4: "#ffb36b", d5: "#ff6b6b", d6: "#ffd27a" };
-    const DAY_SCENE = { d3: "hohenzollern.jpg", d4: "heinzels.jpg", d5: "dom-market.jpg", d6: "rudolfplatz.jpg" };
+    const DAY_ACCENT = { d4: "#f6c560", d5: "#ff8a8a", d6: "#8fdcae" };
+    const DAY_SCENE = { d4: "dom-market.jpg", d5: "heinzels.jpg", d6: "hohenzollern.jpg" };
     const DAY_DETAILS = {
-      d3: { sleep: "Hotel to be booked · central Cologne", move: "After-work flight, then S-Bahn (Cologne Bonn) or train (Düsseldorf) to Köln Hbf", prep: "Only if you picked the Thursday option · laptop, charger, hotel with a desk" },
-      d4: { sleep: "Hotel to be booked · central Cologne", move: "Walk everywhere in the Old Town · Friday flyers: S-Bahn or train in from the airport", prep: "Euros in cash for stalls and mug deposits · warm layers" },
+      d4: { sleep: "Hotel to be booked · central Cologne", move: "After-work flight, then S-Bahn (Cologne Bonn) or train (Düsseldorf) to Köln Hbf", prep: "Euros in cash for stalls and mug deposits · warm layers" },
       d5: { sleep: "Hotel to be booked · central Cologne", move: "On foot all day, tram if legs give out", prep: "Group dinner decision made · comfy waterproof shoes" },
-      d6: { sleep: "Home", move: "Train Köln Hbf → Düsseldorf Flughafen (if flying Eurowings 18:20) or S-Bahn to Cologne Bonn", prep: "Check out by the hotel's time, leave bags, check DB Navigator before leaving" }
+      d6: { sleep: "Home", move: "On foot round the Old Town, then train Köln Hbf → Düsseldorf Flughafen (Eurowings 18:20) or S-Bahn to Cologne Bonn", prep: "Check out by the hotel's time, leave bags, check DB Navigator before leaving" }
     };
     // Operational detail per day, shown under the day's stops.
     const DAY_OPS = {
-      d3: [
-        { icon: "✈️", title: "Thursday-night options (one way, 6 Oct prices)", lines: ["BA Heathrow 17:05 → Cologne Bonn 19:30 · £122 · in town ~20:15, time for a market round before 22:00.", "Eurowings Gatwick 19:50 → Cologne Bonn 22:10 · £112.", "Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · then 40–55 min train, in town ~23:10.", "Eurostar St Pancras 17:04 → Köln Hbf 22:22 · £158 (change in Brussels)."] },
-        { icon: "🏨", title: "Extra night", lines: ["Central 3–4★ doubles were about £120–£190 for Thursday on Booking.com, far cheaper than the Friday and Saturday nights.", "Book a room with a real desk if you're working Friday."] }
-      ],
       d4: [
         { icon: "🕓", title: "Market hours", lines: ["Cathedral market: Thu and Fri 11:00–22:00, Sat 10:00–22:00, Sun to Wed 11:00–21:00 (official site, 2026 season 16 Nov to 23 Dec).", "Other markets keep similar hours; check each one's site if you're cutting it fine."] },
         { icon: "✈️", title: "Friday-evening options (one way, 6 Oct prices)", lines: ["Ryanair Stansted 18:00 → Cologne Bonn 20:15 · £106 · in town ~21:00.", "Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · in town ~23:10.", "BA Heathrow 17:15 → Düsseldorf 19:40 · £172.", "Cologne Bonn airport → Köln Hbf: S-Bahn S19/S13, 15–20 min."] }
       ],
       d5: [
-        { icon: "🗺️", title: "How the day flows", lines: ["Cathedral first while it's quiet, then west to Neumarkt, Rudolfplatz and Stadtgarten.", "Back to the Rhine for the bridge at blue hour, then south to the harbour market when the Old Town is at its busiest (roughly 16:00 to 20:00)."] },
+        { icon: "🗺️", title: "How the day flows", lines: ["Cathedral market first while it's quiet, then Heinzels next door.", "Market no. 3 is whichever wins the Activity Market vote: Markt der Engel (Neumarkt), Nikolausdorf (Rudolfplatz), Stadtgarten or the harbour market.", "The Old Town is at its busiest roughly 16:00 to 20:00, so the harbour market is the calmer pick for later."] },
         { icon: "🍺", title: "Dinner for seven", lines: ["December Saturdays are packed. Either book one table or split into two smaller groups and walk in.", "Kölsch keeps coming in small glasses until you put your beer mat on top."] }
       ],
       d6: [
-        { icon: "🎅", title: "Nikolaustag", lines: ["6 Dec is St Nicholas Day. Nikolausdorf at Rudolfplatz is the obvious stop.", "Most shops are shut on Sundays in Germany. Markets open from 11:00."] },
+        { icon: "🎅", title: "Nikolaustag in the city", lines: ["6 Dec is St Nicholas Day. Nikolausdorf at Rudolfplatz is the obvious stop.", "Most shops are shut on Sundays in Germany. Markets and museums open from 11:00.", "Sunday is a service day at the cathedral: check visiting and tower times before you go."] },
         { icon: "🚆", title: "Getting out", lines: ["Eurowings Düsseldorf 18:20 → Heathrow 18:45 · £65: leave Köln Hbf ~16:00, train 40–55 min incl. SkyTrain.", "BA Cologne Bonn 15:55 → Heathrow 16:20 · £142: leave ~14:00, S-Bahn 15–20 min.", "Fallback if flights are disrupted: Eurostar Köln 16:43 → St Pancras 21:57 (£189.50 on 6 Oct)."] }
       ]
     };
     const DETAILS = [
       { id: "x-mugs", kind: "extra", icon: "☕", name: "Glühwein, mugs and cash", tag: "Every market", summary: "Each market has its own mug design. You pay a deposit with your first drink and get it back when you return the mug, or keep it as a souvenir.", sections: [{ h: "Money", lines: ["Bring euros in cash. Plenty of stalls still don't take cards.", "Keep mug-deposit cash separate from your spending money.", "Set up one shared expenses group (Tricount or Splitwise) for hotel and dinner splits."] }] },
-      { id: "x-arrival", kind: "extra", icon: "🌙", name: "Thursday night vs Friday evening", tag: "Vote in the Crew Desk", summary: "Thursday fares are about the same as Friday's. The real cost of Thursday is one extra hotel night (roughly £60–£95 each sharing). It buys you Friday night at the markets.", sections: [{ h: "Who should do Thursday", lines: ["Anyone who can work remotely on Friday.", "Anyone who wants a quiet weeknight market before the weekend crowds."] }, { h: "Who should do Friday", lines: ["Anyone who has to be in the office Friday.", "Budget-first: Eurowings Heathrow → Düsseldorf 19:30 was £67 on 6 Oct."] }] },
-      { id: "x-stay", kind: "extra", icon: "🏨", name: "Hotels are already pricey", tag: "Book early", summary: "On 6 Oct, central 3–4★ doubles were £448–£710 for Fri + Sat, about £224–£355 each sharing. Thursday night alone was £120–£190 per room.", sections: [{ h: "For seven of us", lines: ["Agree the room split for seven early.", "A big apartment hasn't been searched yet. Worth a look if we want one base."] }] }
+      { id: "x-flightout", kind: "extra", icon: "🛬", name: "Friday evening flights", tag: "Vote in the Crew Desk", summary: "The earliest sensible flight lands about 20:15, so Friday night is roughly an hour at the markets before they close at 22:00. The cheapest has you in town about 23:10.", sections: [{ h: "Earliest into town", lines: ["Ryanair Stansted 18:00 → Cologne Bonn 20:15 · £106 · in town ~21:00."] }, { h: "Cheapest", lines: ["Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · in town ~23:10."] }] },
+      { id: "x-stay", kind: "extra", icon: "🏨", name: "Hotels are already pricey", tag: "Book early", summary: "On 6 Oct, central 3–4★ doubles were £448–£710 for Fri + Sat, about £224–£355 each sharing.", sections: [{ h: "For seven of us", lines: ["Agree the room split for seven early.", "A big apartment hasn't been searched yet. Worth a look if we want one base."] }] }
     ];
     const DAY_LEGS = {};
     const DRIVING_NOTES = {};
     const BOOK_BY = [
-      { date: "Now", what: "Vote Thursday night vs Friday evening in the Crew Desk", tag: "Everyone", detail: "x-arrival" },
+      { date: "Now", what: "Vote the Friday flight out in the Crew Desk", tag: "Everyone", detail: "x-flightout" },
       { date: "Now", what: "Book your flights. Fares move daily, so re-check the Crew Desk prices first", tag: "Everyone" },
-      { date: "Now", what: "Hotel rooms near the cathedral for Fri + Sat (plus Thu if you're coming early)", tag: "Owner needed", detail: "x-stay" },
+      { date: "Now", what: "Hotel rooms near the cathedral for Fri + Sat", tag: "Owner needed", detail: "x-stay" },
       { date: "By late Oct", what: "Saturday dinner for seven, if we decide to book rather than walk in", tag: "Owner needed" },
       { date: "Before you fly", what: "Euros in cash for stalls and mug deposits", tag: "Everyone", detail: "x-mugs" }
     ];
@@ -2957,9 +3148,13 @@
     // keyword rules (for example "tea" or "coast") from assigning the wrong
     // artwork and guarantees every itinerary card has a deliberate image.
     const EXACT_SCENE = {
-      "thu-night crew flies london → cologne": "hohenzollern.jpg",
+      "fly london → cologne (friday evening)": "hohenzollern.jpg",
+      "check in + last-hour glühwein at the dom market": "dom-market.jpg",
+      "cathedral market · am kölner dom": "dom-market.jpg",
+      "harbour market (rheinauhafen)": "schoko.jpg",
+      "museum ludwig or the chocolate museum": "ludwig.jpg",
+      "brauhaus lunch + kölsch (old town)": "brauhaus.jpg",
       "check in + first glühwein at the dom market": "dom-market.jpg",
-      "work from the hotel (thu-night crew)": "dom-market.jpg",
       "fri-evening crew flies london → cologne": "hohenzollern.jpg",
       "heinzels wintermärchen + ice rink (alter markt / heumarkt)": "heinzels.jpg",
       "brauhaus dinner · früh am dom": "brauhaus.jpg",
@@ -2971,7 +3166,8 @@
       "harbour market + chocolate museum (rheinauhafen)": "schoko.jpg",
       "saturday group dinner (brauhaus)": "brauhaus.jpg",
       "museum ludwig (or a slow breakfast)": "ludwig.jpg",
-      "last round: heinzels + cathedral market, mug swap": "heinzels.jpg",
+      "last glühwein + mug swap at the cathedral market": "dom-market.jpg",
+      "market no. 3 · the crew's pick (activity market vote)": "engel.jpg",
       "collect bags + train köln hbf → düsseldorf airport": "hohenzollern.jpg",
       "fly düsseldorf → heathrow (eurowings, if booked)": "hohenzollern.jpg"
     };
@@ -3003,10 +3199,11 @@
         [/stadtgarten/, "Local crowd · DJs some evenings"],
         [/hohenzollern|blue hour/, "Aim for 16:30–17:00 · sunset is early in December"],
         [/harbour|hafen|chocolate/, "Quieter in the Saturday crush window"],
+        [/market no\. 3/, "Engel, Nikolausdorf, Stadtgarten or harbour"],
         [/heinzel|alter markt|heumarkt/, "Two squares joined up · ice rink on Heumarkt"],
         [/cathedral market|dom market|glühwein/, "Busiest market · cash for the mug deposit"],
         [/ludwig|museum/, "Rainy-day option · check opening hours"],
-        [/work from the hotel/, "Needs a desk and decent wifi"],
+        [/brauhaus lunch/, "Old Town brauhaus · Kölsch in small glasses"],
         [/düsseldorf airport|train köln hbf/, "40–55 min incl. SkyTrain · check DB Navigator"],
         [/flight|fly/, "Under-seat bag only on basic fares"],
         [/dinner|brauhaus|früh/, "Seven people · book or split and walk in"]
@@ -3042,25 +3239,25 @@
         const n = items.filter(it => it.dayId === d.id).length;
         const cnt = dayIsOff(d.id) ? "Not in the trip" : (n ? `${n} stop${n > 1 ? "s" : ""}` : "Tap to plan");
         return `<button class="vp-daynode" style="color:${ac}" data-goslide="${idx + 1}">
-          ${scene ? `<img class="vp-daybead" src="${scene}" alt="${escapeAttr(d.city)}" loading="lazy" onerror="this.outerHTML='<span class=&quot;vp-daybead&quot; style=&quot;display:grid;place-items:center;font-size:30px&quot;>📍</span>'">` : `<span class="vp-daybead" style="display:grid;place-items:center;font-size:30px">📍</span>`}
+          <span class="vp-bauble">${scene ? `<img class="vp-daybead" src="${scene}" alt="${escapeAttr(d.city)}" loading="lazy" onerror="this.outerHTML='<span class=&quot;vp-daybead&quot; style=&quot;display:grid;place-items:center;font-size:30px&quot;>📍</span>'">` : `<span class="vp-daybead" style="display:grid;place-items:center;font-size:30px">📍</span>`}<span class="vp-door">${escapeHtml(d.date.split(" ")[1] || "")}</span></span>
           <span class="vp-daynum">Day ${idx + 1} · ${escapeHtml(d.date.split(" ")[0])}</span>
           <span class="vp-dayname">${escapeHtml(d.city)}</span>
           <span class="vp-daycount">${cnt}</span>
         </button>`;
       };
       const overviewGroups = [
-        { title: "Cologne Christmas markets", range: "3–6 Dec", ids: ["d3", "d4", "d5", "d6"] }
+        { title: "Cologne Christmas markets", range: "4–6 Dec", ids: ["d4", "d5", "d6"] }
       ].map(group => {
         const groupDays = group.ids.map(id => ({ d: TRIP_DAYS.find(x => x.id === id), idx: TRIP_DAYS.findIndex(x => x.id === id) })).filter(x => x.d);
         return `<div class="vp-phase"><div class="vp-phase-title"><span>${escapeHtml(group.title)}</span><span>${escapeHtml(group.range)}</span></div>
-          <div class="vp-days" style="--phase-count:${groupDays.length}">${groupDays.map(x => overviewNode(x.d, x.idx)).join("")}</div>
+          <div class="vp-days" style="--phase-count:${groupDays.length}"><svg class="vp-garland" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path d="M2 4 Q18 22 34 4 Q50 22 66 4 Q82 22 98 4"/></svg>${groupDays.map(x => overviewNode(x.d, x.idx)).join("")}</div>
         </div>`;
       }).join("");
       const overview = `<section class="vp-slide">${VP_MTN}
         <div class="vp-title-wrap">
           <div class="vp-eyebrow">The crew of seven · 4 – 6 Dec 2026</div>
           <div class="vp-title">Köln Weihnachten</div>
-          <div class="vp-sub">Seven markets · one cathedral · a lot of Glühwein</div>
+          <div class="vp-sub">Two or three markets · one cathedral · a lot of Glühwein</div>
           <div class="vp-themes">Markets · Glühwein · Kölsch · Cathedral · Rhine · Nikolaustag</div>
         </div>
         <div class="vp-overview-groups">${overviewGroups}</div>
@@ -3107,7 +3304,7 @@
       }).join("");
 
       const dotsHtml = Array.from({ length: total }, (_, k) => `<button class="vp-dot${k === 0 ? " on" : ""}" data-goslide="${k}" aria-label="Slide ${k + 1}"></button>`).join("");
-      const jumpHtml = `<button class="vp-jbtn${vitinIdx === 0 ? " on" : ""}" data-goslide="0">🗺 Overview</button>` + TRIP_DAYS.map((d, idx) => `<button class="vp-jbtn${vitinIdx === idx + 1 ? " on" : ""}" data-goslide="${idx + 1}">${escapeHtml(d.date.split(" ").slice(0, 2).join(" "))}</button>`).join("");
+      const jumpHtml = `<button class="vp-jbtn${vitinIdx === 0 ? " on" : ""}" data-goslide="0">🗺 Overview</button>` + TRIP_DAYS.map((d, idx) => `<button class="vp-jbtn door${vitinIdx === idx + 1 ? " on" : ""}" data-goslide="${idx + 1}"><b>${escapeHtml(d.date.split(" ")[1] || "")}</b>${escapeHtml(d.date.split(" ")[0])}</button>`).join("");
       host.innerHTML = `<div class="vp-jump" id="vpJump">${jumpHtml}</div><div class="vp-vp"><div class="vp-track" id="vpTrack">${overview}${daySlides}</div></div>
         <div class="vp-nav"><button class="vp-arrow" id="vpPrev" aria-label="Previous day">‹</button><div class="vp-dots" id="vpDots">${dotsHtml}</div><button class="vp-arrow" id="vpNext" aria-label="Next day">›</button></div>`;
 
@@ -3310,7 +3507,7 @@
       const groupDoneCount = groupTasks.filter(t => state.groupDone[t.id]).length;
       const lines = [
         "Cologne Christmas Trip · Summary",
-        "Dates: Fri 4 → Sun 6 Dec 2026 (Thu 3 Dec early-arrival option)",
+        "Dates: Fri 4 → Sun 6 Dec 2026 (fly in Friday evening)",
         "Route: London → Cologne → London",
         `Group boss progress: ${groupDoneCount}/${groupTasks.length} — at "${checkpoints[groupProgressIndex()].title}"`,
         "",
