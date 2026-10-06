@@ -1021,6 +1021,8 @@
     .nav button, .nav button.plan-tab, .nav button.market-tab, .nav button.desk-tab { color: var(--muted); background: transparent; border: 1px solid transparent; font-weight: 700; }
     .nav button:hover { color: var(--cream); }
     .nav button.active, .nav button.plan-tab.active, .nav button.market-tab.active, .nav button.desk-tab.active { color: #1a1206; background: linear-gradient(180deg, #f9d27a, var(--candle-deep)); border-color: transparent; }
+    .nav .who-chip { margin-left: auto; white-space: nowrap; border: 1px solid rgba(246,197,96,0.30); background: rgba(246,197,96,0.08); color: var(--cream); border-radius: 999px; padding: 9px 13px; font-weight: 700; font-size: 12px; }
+    .nav .who-chip + .sync-chip { margin-left: 0; }
     .nav .sync-chip { border-color: rgba(127,214,160,0.35); background: rgba(127,214,160,0.08); color: #d6f5e1; }
 
     /* ---- Snow on every roof ---- */
@@ -1123,8 +1125,7 @@
           <p>Seven of us, one weekend. Fly in Friday night, two or three markets on Saturday, the city on Sunday, then home.</p>
           <div class="hero-actions">
             <button class="btn" data-jump="plan">🗓️ Itinerary</button>
-            <button class="btn secondary" data-jump="ideas">🎯 Activity Market</button>
-            <button class="btn ghost" data-jump="desk">🛎️ Crew Desk</button>
+            <button class="btn secondary" data-jump="intel">🧭 Cologne Pack</button>
           </div>
         </div>
         <aside class="stat-card">
@@ -1136,20 +1137,6 @@
               <span class="pill hot">🎅 Nikolaustag Sun 6 Dec</span>
               <span class="pill" id="seoulNowPill">🇩🇪 Köln</span>
               <span class="pill" id="travellerCountPill">7 travellers</span>
-            </div>
-          </div>
-          <div class="glass">
-            <div class="label">Crew decisions</div>
-            <div class="ring-row">
-              <div class="ring-wrap">
-                <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
-                  <defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6b6b"/><stop offset="0.55" stop-color="#7fd6a0"/><stop offset="1" stop-color="#ffd27a"/></linearGradient></defs>
-                  <circle class="ring-bg" cx="60" cy="60" r="52"/>
-                  <circle class="ring-fill" id="heroRing" cx="60" cy="60" r="52"/>
-                </svg>
-                <div class="ring-center"><span id="heroProgressPct">0%</span></div>
-              </div>
-              <div class="micro" id="heroProgressSub">Group bosses cleared together.</div>
             </div>
           </div>
         </aside>
@@ -1171,119 +1158,14 @@
 
     <nav class="nav" aria-label="App sections">
       <button class="plan-tab active" data-tab="plan">🗓️ Itinerary</button>
-      <button class="market-tab" data-tab="ideas">🎯 Activity Market</button>
-      <button class="desk-tab" data-tab="desk">🛎️ Crew Desk</button>
       <button data-tab="intel">🧭 Cologne Pack</button>
+      <button class="who-chip" id="changeWhoBtn" type="button" title="Change who you are on this device">🙋 <span id="whoName">—</span></button>
       <button class="sync-chip" id="syncChip" title="Tap to pull the latest from the group">
         <span class="dot"></span><span class="ico">↻</span><span id="syncChipText">Live</span>
       </button>
     </nav>
 
     <main>
-      <section id="ideas" class="section">
-        <div class="layout">
-          <div class="panel pad">
-            <div class="panel-head" style="padding:0 0 18px; border-bottom:0">
-              <div>
-                <h2>Activity Market</h2>
-                <p class="panel-sub">Vote on ideas before they become itinerary items.</p>
-              </div>
-              <div class="pill-row" style="margin:0">
-                <span class="pill done" id="ideasHotBadge">0 shortlist ideas</span>
-                <span class="pill warn" id="ideasVotesBadge">0 votes cast</span>
-              </div>
-            </div>
-            <div class="flow-steps">
-              <div class="flow-step"><strong>1. Pick yourself</strong><span>In the crew panel →</span></div>
-              <div class="flow-step"><strong>2. Vote lightly</strong><span>Keen, maybe or no.</span></div>
-              <div class="flow-step"><strong>3. Shortlist later</strong><span>Shortlist the strongest ideas later.</span></div>
-            </div>
-            <div class="idea-toolbar">
-              <div class="idea-help">Rule of thumb: 4+ keen = shortlist · 2+ no = discuss · mostly maybe = optional.</div>
-              <button class="btn small secondary" id="copyIdeasBtn">Copy vote summary</button>
-            </div>
-            <div class="who-bar">🙋 You're voting as <strong id="whoName">—</strong> <button class="btn small ghost" id="changeWhoBtn" style="margin-left:auto">Not you? Pick yourself</button></div>
-            <div class="idea-grid" id="ideaGrid"></div>
-            <h3 style="margin:24px 0 8px">Add a new idea</h3>
-            <div class="add-idea-form">
-              <input type="text" id="newIdeaTitle" placeholder="Idea name" />
-              <input type="text" id="newIdeaCity" placeholder="Where? e.g. Old Town, Rhine, day trip" />
-              <input type="text" id="newIdeaDesc" placeholder="Why it could be good" />
-              <button class="btn small" id="addIdeaBtn">Add idea</button>
-            </div>
-          </div>
-          <aside class="side-stack">
-            <div class="panel pad">
-              <div class="label">👥 The crew</div>
-              <p class="panel-sub" style="margin:6px 0 12px">Pick yourself, then vote — so every vote is attributed to you.</p>
-              <div class="select-row" style="margin-bottom:14px">
-                <select id="playerSelect" aria-label="You are"></select>
-              </div>
-              <div class="traveller-grid" id="travellerGrid"></div>
-              <details style="margin-top:14px"><summary class="label" style="cursor:pointer">✎ Rename crew</summary><div id="rosterEditor" class="task-list" style="margin-top:10px"></div></details>
-            </div>
-            <div class="panel pad">
-              <div class="label">Decision logic</div>
-              <div class="idea-summary-grid">
-                <div class="mini-score"><div class="num" id="hotIdeaCount">0</div><div class="txt">Strong shortlist ideas</div></div>
-                <div class="mini-score"><div class="num" id="maybeIdeaCount">0</div><div class="txt">Maybe list</div></div>
-                <div class="mini-score"><div class="num" id="blockedIdeaCount">0</div><div class="txt">Needs discussion</div></div>
-              </div>
-              <div class="info-card" style="margin-top:14px">
-                <div class="emoji">💡</div>
-                <h3>Wishlist checkpoint</h3>
-                <p>Vote on one idea to clear your wishlist checkpoint.</p>
-              </div>
-              <div class="info-card" style="margin-top:12px">
-                <div class="emoji">☕</div>
-                <h3>Mug note</h3>
-                <p>Every market has its own Glühwein mug. You pay a deposit with your first drink and get it back when you return the mug, or keep it. <strong>Bring cash</strong>: lots of stalls don't take cards.</p>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section id="desk" class="section">
-        <div class="layout">
-          <div class="panel pad">
-            <div class="panel-head" style="padding:0 0 18px; border-bottom:0">
-              <div>
-                <h2>Crew Desk</h2>
-                <p class="panel-sub">Put your hand up, share options, vote. Where group jobs get owned and decisions get booked.</p>
-              </div>
-              <div class="pill-row" style="margin:0">
-                <span class="pill done" id="deskDecidedBadge">0 booked</span>
-                <span class="pill warn" id="deskOpenBadge">0 open</span>
-                <span class="pill hot" id="deskOptionsBadge">0 options shared</span>
-              </div>
-            </div>
-            <div class="idea-help" style="margin-bottom:14px">🙋 Tap <strong>“I'll look into this”</strong> to own a job · 📋 share options with a link + price · 👍 the group votes · ✅ an owner marks it <strong>booked</strong>. Pick yourself in the Activity Market's crew panel first.</div>
-            <div class="desk-list" id="deskList"></div>
-            <h3 style="margin:26px 0 4px">Start a new decision room</h3>
-            <p class="panel-sub">Anything the group needs to sort — a day trip, a SIM plan, airport transfers.</p>
-            <div class="add-opt" style="grid-template-columns:1.3fr 1.7fr auto; margin-top:12px">
-              <input type="text" id="newRoomTitle" placeholder="What's the decision? e.g. Airport transfer" />
-              <input type="text" id="newRoomDesc" placeholder="One line of detail (optional)" />
-              <button class="btn small" id="addRoomBtn">Add room</button>
-            </div>
-          </div>
-          <aside class="side-stack">
-            <div class="panel pad">
-              <div class="label">✅ Booked</div>
-              <p class="panel-sub" style="margin:6px 0 12px">Locked-in decisions — what's feeding the trip.</p>
-              <div id="deskBooked"></div>
-            </div>
-            <div class="panel pad">
-              <div class="label">How it flows</div>
-              <div class="flow-step" style="margin-top:12px"><strong>1. Own it 🙋</strong><span>Take a job — accom, car, dinners.</span></div>
-              <div class="flow-step" style="margin-top:10px"><strong>2. Share options 📋</strong><span>Post links + prices for the group.</span></div>
-              <div class="flow-step" style="margin-top:10px"><strong>3. Book it ✅</strong><span>Mark it booked once it's sorted.</span></div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
       <section id="plan" class="section active">
         <div class="vitin-head">
           <div class="vitin-modes">
@@ -1304,7 +1186,7 @@
                 <span class="pill hot" id="planCountBadge">0 placed</span>
               </div>
             </div>
-            <div class="idea-help" id="planSummary" style="margin-bottom:14px">Add things to each day below. Use the shortlisted-ideas list on the right for inspiration.</div>
+            <div class="idea-help" id="planSummary" style="margin-bottom:14px">Add things to each day below. Ideas worth a slot are in the Cologne Pack.</div>
             <div class="plan-toolbar">
               <button class="btn small secondary" id="planCopyBtn">Copy itinerary</button>
               <button class="btn small ghost" id="planClearBtn">Clear all</button>
@@ -1320,16 +1202,10 @@
           <aside class="side-stack">
             <div class="panel pad">
               <div class="label">✈️ Crew flights</div>
-              <p class="panel-sub" style="margin-top:4px">Set when you land and when you fly home — both show on the day. Pick yourself in the Activity Market crew panel first.</p>
+              <p class="panel-sub" style="margin-top:4px">Set when you land and when you fly home — both show on the day. Pick yourself with the 🙋 button in the menu bar first.</p>
               <div id="arrivalMe" style="margin-top:12px"></div>
               <div class="arrival-list" id="arrivalList" style="margin-top:12px"></div>
               <div class="arr-foot" id="arrivalsBadge" style="margin-top:10px"></div>
-            </div>
-            <div class="panel pad">
-              <div class="label">💡 Shortlisted ideas</div>
-              <p class="panel-sub" style="margin-top:4px">Won the vote in the Activity Market + decided dinners — add the ones you want to a day yourself.</p>
-              <div class="mini-idea-list" id="planFeed" style="margin-top:12px"></div>
-              <button class="btn small ghost" id="planLockBtn" style="margin-top:6px">🔒 Lock this itinerary</button>
             </div>
             <div class="info-card">
               <div class="emoji">🧭</div>
@@ -1362,7 +1238,7 @@
             <div class="info-card"><div class="emoji">🚶</div><h3>Getting around</h3><p>The Old Town markets are all walkable from the cathedral. Neumarkt, Rudolfplatz and Stadtgarten are a longer walk west, or a short tram ride.</p><ul><li>Cologne Bonn airport → Köln Hbf: S-Bahn S19/S13, about 15–20 min.</li><li>Düsseldorf airport → Köln Hbf: SkyTrain to the airport station, then a train, about 40–55 min.</li></ul></div>
           </div>
 
-          <div class="info-card" style="margin-top:16px"><div class="emoji">🏨</div><h3>Nothing booked yet</h3><p>Flights and hotels are all still open. The options, prices and votes live in the <strong>Crew Desk</strong>. Prices there were checked on 6 Oct 2026 and move daily.</p><ul><li><strong>Arrival:</strong> Friday 4 Dec evening, after work. Vote the flight in the Desk.</li><li><strong>Stay:</strong> central hotels near the cathedral, Fri + Sat.</li><li><strong>Home:</strong> Sunday 6 Dec, Eurowings Düsseldorf 18:20 is the value pick.</li></ul></div>
+          <div class="info-card" style="margin-top:16px"><div class="emoji">🏨</div><h3>Nothing booked yet</h3><p>Flights and hotels are all still open. Tap <strong>Friday evening flights</strong>, <strong>Sunday flights home</strong> or <strong>Where to stay</strong> above for the options. Prices were checked on 6 Oct 2026 and move daily.</p><ul><li><strong>Arrival:</strong> Friday 4 Dec evening, after work.</li><li><strong>Stay:</strong> central hotels near the cathedral, Fri + Sat.</li><li><strong>Home:</strong> Sunday 6 Dec, Eurowings Düsseldorf 18:20 is the value pick.</li></ul></div>
 
           <h3 style="margin:24px 0 12px">🆘 If something goes wrong</h3>
           <div class="grid-2">
@@ -1433,8 +1309,6 @@
 
   <nav class="dock" aria-label="Quick navigation">
     <button data-tab="plan" class="active"><span class="d-ico">🗓️</span>Plan</button>
-    <button data-tab="ideas"><span class="d-ico">🎯</span>Market</button>
-    <button data-tab="desk"><span class="d-ico">🛎️</span>Desk</button>
     <button data-tab="intel"><span class="d-ico">🧭</span>Pack</button>
   </nav>
 
@@ -1443,7 +1317,7 @@
       <h2>Who are you?</h2>
       <p>Tap your name so your votes, notes and jobs are signed as you and not as someone else. It's saved on this device, so you're only asked once.</p>
       <div class="who-grid" id="whoGrid"></div>
-      <p class="panel-sub" style="margin-top:16px">Picked the wrong one? Use “Not you? Pick yourself” in the Activity Market any time.</p>
+      <p class="panel-sub" style="margin-top:16px">Picked the wrong one? Tap the 🙋 name in the menu bar any time.</p>
     </div>
   </div>
   <div class="toast" id="toast"></div>
@@ -3067,10 +2941,16 @@
         { icon: "🚆", title: "Getting out", lines: ["Eurowings Düsseldorf 18:20 → Heathrow 18:45 · £65: leave Köln Hbf ~16:00, train 40–55 min incl. SkyTrain.", "BA Cologne Bonn 15:55 → Heathrow 16:20 · £142: leave ~14:00, S-Bahn 15–20 min.", "Fallback if flights are disrupted: Eurostar Köln 16:43 → St Pancras 21:57 (£189.50 on 6 Oct)."] }
       ]
     };
+    // The researched flight + hotel options (kept in defaultDesk) shown as Cologne Pack detail cards.
+    function deskOpts(roomId) {
+      const room = defaultDesk.rooms.find(r => r.id === roomId); if (!room) return [];
+      return room.options.map(o => ({ name: o.title, price: o.price, note: [o.notes, o.verdict].filter(Boolean).join(" "), book: o.link ? { label: /booking\.com/.test(o.link) ? "Booking.com" : /eurostar/.test(o.link) ? "Eurostar" : "Live fares", url: o.link } : null }));
+    }
     const DETAILS = [
       { id: "x-mugs", kind: "extra", icon: "☕", name: "Glühwein, mugs and cash", tag: "Every market", summary: "Each market has its own mug design. You pay a deposit with your first drink and get it back when you return the mug, or keep it as a souvenir.", sections: [{ h: "Money", lines: ["Bring euros in cash. Plenty of stalls still don't take cards.", "Keep mug-deposit cash separate from your spending money.", "Set up one shared expenses group (Tricount or Splitwise) for hotel and dinner splits."] }] },
-      { id: "x-flightout", kind: "extra", icon: "🛬", name: "Friday evening flights", tag: "Vote in the Crew Desk", summary: "The earliest sensible flight lands about 20:15, so Friday night is roughly an hour at the markets before they close at 22:00. The cheapest has you in town about 23:10.", sections: [{ h: "Earliest into town", lines: ["Ryanair Stansted 18:00 → Cologne Bonn 20:15 · £106 · in town ~21:00."] }, { h: "Cheapest", lines: ["Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · in town ~23:10."] }] },
-      { id: "x-stay", kind: "extra", icon: "🏨", name: "Hotels are already pricey", tag: "Book early", summary: "On 6 Oct, central 3–4★ doubles were £448–£710 for Fri + Sat, about £224–£355 each sharing.", sections: [{ h: "For seven of us", lines: ["Agree the room split for seven early.", "A big apartment hasn't been searched yet. Worth a look if we want one base."] }] }
+      { id: "x-flightout", kind: "extra", icon: "🛬", name: "Friday evening flights", tag: "Fri 4 Dec · one way", options: deskOpts("flight_out"), summary: "The earliest sensible flight lands about 20:15, so Friday night is roughly an hour at the markets before they close at 22:00. The cheapest has you in town about 23:10.", sections: [{ h: "Earliest into town", lines: ["Ryanair Stansted 18:00 → Cologne Bonn 20:15 · £106 · in town ~21:00."] }, { h: "Cheapest", lines: ["Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · in town ~23:10."] }] },
+      { id: "x-flighthome", kind: "extra", icon: "🛫", name: "Sunday flights home", tag: "Sun 6 Dec · one way", summary: "The Eurowings 18:20 from Düsseldorf is the value pick and keeps most of Sunday. The BA 15:55 from Cologne Bonn is the simplest airport run.", options: deskOpts("flights_home") },
+      { id: "x-stay", options: deskOpts("stay_cologne"), kind: "extra", icon: "🏨", name: "Where to stay", tag: "Book early", summary: "On 6 Oct, central 3–4★ doubles were £448–£710 for Fri + Sat, about £224–£355 each sharing.", sections: [{ h: "For seven of us", lines: ["Agree the room split for seven early.", "A big apartment hasn't been searched yet. Worth a look if we want one base."] }] }
     ];
     DETAILS.push(
       { id: "x-food", kind: "stop", match: "market food", icon: "🥔", name: "What to eat at the markets", tag: "Saturday dinner", summary: "No booking for seven: graze the stalls instead. Heinzels has its own food alleys, Markt der Engel has the widest street-food range, and Stadtgarten is best for vegan and modern food.", sections: [
@@ -3087,8 +2967,8 @@
     const DAY_LEGS = {};
     const DRIVING_NOTES = {};
     const BOOK_BY = [
-      { date: "Now", what: "Vote the Friday flight out in the Crew Desk", tag: "Everyone", detail: "x-flightout" },
-      { date: "Now", what: "Book your flights. Fares move daily, so re-check the Crew Desk prices first", tag: "Everyone" },
+      { date: "Now", what: "Pick the Friday flight out, ideally all on the same one", tag: "Everyone", detail: "x-flightout" },
+      { date: "Now", what: "Book your flights home too. Fares move daily", tag: "Everyone", detail: "x-flighthome" },
       { date: "Now", what: "Hotel rooms near the cathedral for Fri + Sat", tag: "Owner needed", detail: "x-stay" },
       { date: "By late Oct", what: "Saturday dinner for seven, if we decide to book rather than walk in", tag: "Owner needed" },
       { date: "Before you fly", what: "Euros in cash for stalls and mug deposits", tag: "Everyone", detail: "x-mugs" }
@@ -3382,7 +3262,8 @@
     }
     function renderAll() {
       ensureDesk(); ensurePlan();
-      renderWho(); renderPlayerSelect(); renderTravellerGrid(); renderIdeas(); renderBadges(); renderRosterEditor(); renderHero(); renderDesk(); renderPlan(); renderVisualItinerary(); renderArrivals(); renderExtras();
+      // Activity Market + Crew Desk tabs were removed (Oct 2026); their renderers stay unused.
+      renderWho(); renderHero(); renderPlan(); renderVisualItinerary(); renderArrivals(); renderExtras();
     }
 
     function toast(message) {
@@ -3506,7 +3387,7 @@
     document.getElementById("focusPlayerBtn")?.addEventListener("click", () => toast(`${selectedPlayer().name} is selected`));
     document.getElementById("resetBtn")?.addEventListener("click", () => { if (confirm("Reset this browser's Cologne board state?")) { localStorage.removeItem(STORE_KEY); state = loadState(); renderAll(); toast("Board reset"); } });
 
-    document.getElementById("addIdeaBtn").addEventListener("click", () => {
+    document.getElementById("addIdeaBtn")?.addEventListener("click", () => {
       const title = document.getElementById("newIdeaTitle").value.trim();
       const city = document.getElementById("newIdeaCity").value.trim() || "TBC";
       const desc = document.getElementById("newIdeaDesc").value.trim() || "New group idea. Vote first, commit later.";
@@ -3520,7 +3401,7 @@
       saveState(); renderAll(); toast("Idea added");
     });
 
-    document.getElementById("copyIdeasBtn").addEventListener("click", async () => {
+    document.getElementById("copyIdeasBtn")?.addEventListener("click", async () => {
       const lines = [
         "Cologne Christmas Trip · Idea Votes",
         `Selected traveller: ${selectedPlayer().name}`,
