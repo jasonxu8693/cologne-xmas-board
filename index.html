@@ -1102,6 +1102,30 @@
       .vp-dayname { font-size: 12px; }
     }
     @media (prefers-reduced-motion: reduce) { .bulb:after, .lebkuchen { animation: none !important; } }
+
+    /* ---- Phone ergonomics (audit 6 Oct): no iOS focus-zoom, thumb-sized controls, nav fits ---- */
+    @media (max-width: 620px) {
+      input[type="text"], input[type="time"], input[type="search"], select, textarea, .pi-time, .pi-move, .dl-input, .rn-input, .arr-fields input { font-size: 16px !important; }
+      .pd-btn, .pi-time, .pi-move, .pi-x, .btn.small, .vitin-mode, .sb-link, .booked-reopen { min-height: 44px; }
+      .pd-btn { padding: 8px 12px; font-size: 12.5px; }
+      .pi-x { min-width: 44px; }
+      .pi-time { width: 110px; }
+      .day-add input[type="text"], .plan-add input, .plan-add select { min-height: 44px; }
+      .vp-dots { gap: 2px; }
+      .vp-dot { position: relative; }
+      .vp-dot:after { content: ""; position: absolute; inset: -17px -6px; }
+      .xtra-drive summary { padding: 12px 0; }
+      .nav { gap: 4px; padding: 6px; overflow-x: visible; }
+      .nav button { padding: 10px 11px; min-height: 44px; }
+      .nav .who-chip { padding: 9px 10px; }
+      .nav .sync-chip { padding: 9px 11px; }
+      .nav .sync-chip #syncChipText { display: none; }
+      .vp-detail span, .vpd-h, .opt-fact span, .dm-stat span { font-size: 11px; }
+    }
+    @media (max-width: 400px) {
+      .nav button[data-tab] { padding: 10px 8px; font-size: 12px; }
+      .nav .who-chip { max-width: 92px; overflow: hidden; text-overflow: ellipsis; }
+    }
   </style>
 </head>
 <body>
