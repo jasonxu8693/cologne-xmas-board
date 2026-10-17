@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-title" content="Köln Xmas" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <title>Cologne Christmas Markets · Crew Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1126,7 +1128,20 @@
       .nav button[data-tab] { padding: 10px 8px; font-size: 12px; }
       .nav .who-chip { max-width: 92px; overflow: hidden; text-overflow: ellipsis; }
     }
+
+    .phone-card .phone-steps { margin: 8px 0 0; padding-left: 18px; }
+    .phone-card .phone-steps li { margin: 4px 0; }
+    .phone-card .phone-note { font-size: 12.5px; color: var(--subtle); margin-top: 8px; }
+    .phone-card [hidden] { display: none !important; }
+    .app-update { position: fixed; left: 12px; right: 12px; top: calc(10px + env(safe-area-inset-top)); z-index: 60; display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 14px; background: rgba(9,24,17,0.96); border: 1px solid rgba(255,210,122,0.4); color: var(--ink); font-size: 13px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .app-update[hidden] { display: none; }
+    .app-update span { flex: 1; line-height: 1.4; }
+    .app-update button { min-height: 44px; min-width: 44px; border: 0; border-radius: 10px; background: rgba(255,255,255,0.1); color: var(--ink); font: inherit; font-weight: 800; cursor: pointer; }
   </style>
+<link rel="manifest" href="/cologne-xmas-board/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/cologne-xmas-board/icons/app-180.png">
+<meta name="theme-color" content="#06120d">
+<script defer src="/cologne-xmas-board/pwa-register.js"></script>
 </head>
 <body>
   <div class="snow" aria-hidden="true"><i style="left:0%;animation-duration:9s;animation-delay:-0s;--dx:-30px;opacity:0.35;width:3px;height:3px"></i><i style="left:37%;animation-duration:16s;animation-delay:-13s;--dx:-1px;opacity:0.52;width:8px;height:8px"></i><i style="left:74%;animation-duration:12s;animation-delay:-9s;--dx:28px;opacity:0.69;width:7px;height:7px"></i><i style="left:11%;animation-duration:19s;animation-delay:-5s;--dx:-3px;opacity:0.86;width:6px;height:6px"></i><i style="left:48%;animation-duration:15s;animation-delay:-1s;--dx:26px;opacity:0.43;width:5px;height:5px"></i><i style="left:85%;animation-duration:11s;animation-delay:-14s;--dx:-5px;opacity:0.60;width:4px;height:4px"></i><i style="left:22%;animation-duration:18s;animation-delay:-10s;--dx:24px;opacity:0.77;width:3px;height:3px"></i><i style="left:59%;animation-duration:14s;animation-delay:-6s;--dx:-7px;opacity:0.94;width:8px;height:8px"></i><i style="left:96%;animation-duration:10s;animation-delay:-2s;--dx:22px;opacity:0.51;width:7px;height:7px"></i><i style="left:33%;animation-duration:17s;animation-delay:-15s;--dx:-9px;opacity:0.68;width:6px;height:6px"></i><i style="left:70%;animation-duration:13s;animation-delay:-11s;--dx:20px;opacity:0.85;width:5px;height:5px"></i><i style="left:7%;animation-duration:9s;animation-delay:-7s;--dx:-11px;opacity:0.42;width:4px;height:4px"></i><i style="left:44%;animation-duration:16s;animation-delay:-3s;--dx:18px;opacity:0.59;width:3px;height:3px"></i><i style="left:81%;animation-duration:12s;animation-delay:-16s;--dx:-13px;opacity:0.76;width:8px;height:8px"></i><i style="left:18%;animation-duration:19s;animation-delay:-12s;--dx:16px;opacity:0.93;width:7px;height:7px"></i><i style="left:55%;animation-duration:15s;animation-delay:-8s;--dx:-15px;opacity:0.50;width:6px;height:6px"></i><i style="left:92%;animation-duration:11s;animation-delay:-4s;--dx:14px;opacity:0.67;width:5px;height:5px"></i><i style="left:29%;animation-duration:18s;animation-delay:-0s;--dx:-17px;opacity:0.84;width:4px;height:4px"></i><i style="left:66%;animation-duration:14s;animation-delay:-13s;--dx:12px;opacity:0.41;width:3px;height:3px"></i><i style="left:3%;animation-duration:10s;animation-delay:-9s;--dx:-19px;opacity:0.58;width:8px;height:8px"></i><i style="left:40%;animation-duration:17s;animation-delay:-5s;--dx:10px;opacity:0.75;width:7px;height:7px"></i><i style="left:77%;animation-duration:13s;animation-delay:-1s;--dx:-21px;opacity:0.92;width:6px;height:6px"></i><i style="left:14%;animation-duration:9s;animation-delay:-14s;--dx:8px;opacity:0.49;width:5px;height:5px"></i><i style="left:51%;animation-duration:16s;animation-delay:-10s;--dx:-23px;opacity:0.66;width:4px;height:4px"></i><i style="left:88%;animation-duration:12s;animation-delay:-6s;--dx:6px;opacity:0.83;width:3px;height:3px"></i><i style="left:25%;animation-duration:19s;animation-delay:-2s;--dx:-25px;opacity:0.40;width:8px;height:8px"></i><i style="left:62%;animation-duration:15s;animation-delay:-15s;--dx:4px;opacity:0.57;width:7px;height:7px"></i><i style="left:99%;animation-duration:11s;animation-delay:-11s;--dx:-27px;opacity:0.74;width:6px;height:6px"></i><i style="left:36%;animation-duration:18s;animation-delay:-7s;--dx:2px;opacity:0.91;width:5px;height:5px"></i><i style="left:73%;animation-duration:14s;animation-delay:-3s;--dx:-29px;opacity:0.48;width:4px;height:4px"></i><i style="left:10%;animation-duration:10s;animation-delay:-16s;--dx:0px;opacity:0.65;width:3px;height:3px"></i><i style="left:47%;animation-duration:17s;animation-delay:-12s;--dx:29px;opacity:0.82;width:8px;height:8px"></i><i style="left:84%;animation-duration:13s;animation-delay:-8s;--dx:-2px;opacity:0.39;width:7px;height:7px"></i><i style="left:21%;animation-duration:9s;animation-delay:-4s;--dx:27px;opacity:0.56;width:6px;height:6px"></i><i style="left:58%;animation-duration:16s;animation-delay:-0s;--dx:-4px;opacity:0.73;width:5px;height:5px"></i><i style="left:95%;animation-duration:12s;animation-delay:-13s;--dx:25px;opacity:0.90;width:4px;height:4px"></i><i style="left:32%;animation-duration:19s;animation-delay:-9s;--dx:-6px;opacity:0.47;width:3px;height:3px"></i><i style="left:69%;animation-duration:15s;animation-delay:-5s;--dx:23px;opacity:0.64;width:8px;height:8px"></i><i style="left:6%;animation-duration:11s;animation-delay:-1s;--dx:-8px;opacity:0.81;width:7px;height:7px"></i><i style="left:43%;animation-duration:18s;animation-delay:-14s;--dx:21px;opacity:0.38;width:6px;height:6px"></i><i style="left:80%;animation-duration:14s;animation-delay:-10s;--dx:-10px;opacity:0.55;width:5px;height:5px"></i><i style="left:17%;animation-duration:10s;animation-delay:-6s;--dx:19px;opacity:0.72;width:4px;height:4px"></i></div>
@@ -1263,6 +1278,15 @@
           </div>
 
           <div class="info-card" style="margin-top:16px"><div class="emoji">🏨</div><h3>Hotel booked, flights still open</h3><p><strong>Motel One Köln-Altstadt</strong>, Tel-Aviv-Str. 6, Fri 4 to Sun 6 Dec. Flights are still open: tap <strong>Friday evening flights</strong> or <strong>Sunday flights home</strong> above for the options. Prices were checked on 6 Oct 2026 and move daily.</p><ul><li><strong>Arrival:</strong> Friday 4 Dec evening, after work.</li><li><strong>Stay:</strong> Motel One Köln-Altstadt, Fri + Sat. Check-in from 15:00, check-out by 12:00 Sunday.</li><li><strong>Home:</strong> Sunday 6 Dec, Eurowings Düsseldorf 18:20 is the value pick.</li></ul></div>
+
+          <div class="info-card phone-card" id="phoneCard" style="margin-top:16px"><div class="emoji">📱</div><h3>Add the board to your phone</h3>
+            <p id="phoneIntro">Optional. It opens full screen from your home screen, and once you've opened it with signal it keeps a saved copy of the plan and this Cologne Pack for when you have none.</p>
+            <div id="phoneStandalone" hidden><p>You're using the home-screen version. 🎄</p></div>
+            <div id="phoneIos"><strong>iPhone (Safari)</strong><ol class="phone-steps"><li>Tap the Share button.</li><li>Tap <strong>Add to Home Screen</strong> (scroll down the list if you don't see it).</li><li>Tap <strong>Add</strong>.</li></ol></div>
+            <div id="phoneAndroid" style="margin-top:10px"><strong>Android (Chrome)</strong><ol class="phone-steps"><li>Tap the ⋮ menu.</li><li>Tap <strong>Add to Home screen</strong> or <strong>Install app</strong>.</li></ol>
+              <button class="btn small" id="installBtn" type="button" hidden>Install on this phone</button></div>
+            <p class="phone-note">Votes, notes and group changes still need a connection. Your packing ticks stay on each device.</p>
+          </div>
 
           <h3 style="margin:24px 0 12px">🆘 If something goes wrong</h3>
           <div class="grid-2">
@@ -3560,6 +3584,38 @@
     remotePull({ initial: true }).finally(maybePromptWho);
     startSyncLoops();
     setInterval(renderCountdown, 30000); // keep the countdown + Cologne clock ticking
+  </script>
+
+  <div class="app-update" id="appUpdate" role="status" hidden><span>A new version of the board is ready. Close every open copy of it, then reopen.</span><button type="button" id="appUpdateClose" aria-label="Dismiss">✕</button></div>
+  <script>
+  (() => {
+    const $ = id => document.getElementById(id);
+    const standalone = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true;
+    const ua = navigator.userAgent || "";
+    const isIos = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/.test(ua);
+    if (standalone) {
+      ["phoneIntro","phoneIos","phoneAndroid"].forEach(id => { const el = $(id); if (el) el.hidden = true; });
+      const s = $("phoneStandalone"); if (s) s.hidden = false;
+    } else if (isIos) { const a = $("phoneAndroid"); if (a) a.hidden = true; }
+    else if (isAndroid) { const i = $("phoneIos"); if (i) i.hidden = true; }
+    let deferred = null;
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault(); deferred = e;
+      const b = $("installBtn"); if (b && !standalone) b.hidden = false;
+    });
+    const btn = $("installBtn");
+    if (btn) btn.addEventListener("click", async () => {
+      if (!deferred) return;
+      deferred.prompt();
+      try { await deferred.userChoice; } catch (_) {}
+      deferred = null; btn.hidden = true;
+    });
+    window.addEventListener("appinstalled", () => { if (btn) btn.hidden = true; });
+    window.addEventListener("trip-app-update", () => { const u = $("appUpdate"); if (u) u.hidden = false; });
+    const close = $("appUpdateClose");
+    if (close) close.addEventListener("click", () => { $("appUpdate").hidden = true; });
+  })();
   </script>
 </body>
 </html>
