@@ -1262,7 +1262,7 @@
             <div class="info-card"><div class="emoji">🚶</div><h3>Getting around</h3><p>The Old Town markets are all walkable from the cathedral. Neumarkt, Rudolfplatz and Stadtgarten are a longer walk west, or a short tram ride.</p><ul><li>Cologne Bonn airport → Köln Hbf: S-Bahn S19/S13, about 15–20 min.</li><li>Düsseldorf airport → Köln Hbf: SkyTrain to the airport station, then a train, about 40–55 min.</li></ul></div>
           </div>
 
-          <div class="info-card" style="margin-top:16px"><div class="emoji">🏨</div><h3>Nothing booked yet</h3><p>Flights and hotels are all still open. Tap <strong>Friday evening flights</strong>, <strong>Sunday flights home</strong> or <strong>Where to stay</strong> above for the options. Prices were checked on 6 Oct 2026 and move daily.</p><ul><li><strong>Arrival:</strong> Friday 4 Dec evening, after work.</li><li><strong>Stay:</strong> central hotels near the cathedral, Fri + Sat.</li><li><strong>Home:</strong> Sunday 6 Dec, Eurowings Düsseldorf 18:20 is the value pick.</li></ul></div>
+          <div class="info-card" style="margin-top:16px"><div class="emoji">🏨</div><h3>Hotel booked, flights still open</h3><p><strong>Motel One Köln-Altstadt</strong>, Tel-Aviv-Str. 6, Fri 4 to Sun 6 Dec. Flights are still open: tap <strong>Friday evening flights</strong> or <strong>Sunday flights home</strong> above for the options. Prices were checked on 6 Oct 2026 and move daily.</p><ul><li><strong>Arrival:</strong> Friday 4 Dec evening, after work.</li><li><strong>Stay:</strong> Motel One Köln-Altstadt, Fri + Sat. Check-in from 15:00, check-out by 12:00 Sunday.</li><li><strong>Home:</strong> Sunday 6 Dec, Eurowings Düsseldorf 18:20 is the value pick.</li></ul></div>
 
           <h3 style="margin:24px 0 12px">🆘 If something goes wrong</h3>
           <div class="grid-2">
@@ -1445,14 +1445,15 @@
           { id: "home_dus_2025", by: null, researcher: "Jason", title: "BA Düsseldorf → Heathrow · 20:25", link: GF("Dusseldorf", "London", "2026-12-06"), price: "£88 pp", availability: "Latest sensible option", availabilityTone: "done", notes: "Leave Köln Hbf about 18:05. Lands Heathrow 20:45.", verdict: "Maximum Sunday, still cheap. Late home before Monday work.", facts: [{ label: "Leave Köln Hbf", value: "~18:05" }, { label: "Lands", value: "Heathrow 20:45" }], photos: [], source: "Google Flights, checked 6 Oct 2026", votes: {} },
           { id: "home_eurostar", by: null, researcher: "Jason", title: "Eurostar Köln Hbf → St Pancras · 16:43", link: "https://www.eurostar.com/uk-en", price: "£189.50 pp", availability: "Centre to centre, change in Brussels", availabilityTone: "warn", notes: "No airport. Arrives St Pancras 21:57.", verdict: "Nicest journey, roughly triple the cheapest flight.", facts: [{ label: "Depart", value: "Köln Hbf 16:43" }, { label: "Arrive", value: "St Pancras 21:57" }], photos: [], source: "eurostar.com, Standard, checked 6 Oct 2026", votes: {} }
         ], status: "open", chosen: null },
-        { id: "stay_cologne", taskId: "accommodation", emoji: "🏨", kind: "accom", title: "Where we stay · Fri 4 to Sun 6 Dec", desc: "Hotels within 1 km of the cathedral. Prices are for one double room for both nights (two people sharing, so halve it per person). Eight of us means four doubles or twins. Weekend prices are already high, so book early.", owners: [], options: [
+        { id: "stay_cologne", taskId: "accommodation", emoji: "🏨", kind: "accom", title: "Where we stay · Fri 4 to Sun 6 Dec", desc: "Booked: Motel One Köln-Altstadt for Fri 4 and Sat 5 Dec. Eight of us, four rooms, pairs to agree.", owners: [], booked: true, bookedVia: "Motel One", lockLabel: "Booked by Jason on 17 Oct", log: { status: "booked", text: "Motel One Köln-Altstadt · Fri 4 → Sun 6 Dec (2 nights) · booked by Jason" }, options: [
+          { id: "st_motelone_altstadt", by: null, researcher: "Jason", title: "Motel One Köln-Altstadt ✅ booked", link: "https://www.motel-one.com/en/hotels/cologne/hotel-cologne-altstadt/", price: "Booked", availability: "Booked 17 Oct", availabilityTone: "done", notes: "Tel-Aviv-Str. 6, Altstadt-Süd. 8.5 on 5,300+ reviews.", verdict: "Cheapest central hotel that takes late Friday check-ins.", facts: [{ label: "Address", value: "Tel-Aviv-Str. 6, 50676 Köln" }, { label: "Check-in", value: "Fri 4 Dec, from 15:00" }, { label: "Check-out", value: "Sun 6 Dec, by 12:00" }, { label: "Walk to Dom", value: "~15 min" }, { label: "Walk to harbour market", value: "~10 min" }, { label: "Breakfast", value: "Not included" }], warning: "Sunday bags: ask reception to hold them after check-out (not confirmed yet).", photos: [], source: "Booked by Jason, 17 Oct 2026", votes: {} },
           { id: "st_maritim", by: null, researcher: "Live search", title: "Maritim Hotel Köln", link: BK("maritim-koln"), price: "£448 per room, 2 nights (~£224 pp)", availability: "Cheapest central 4★ found", availabilityTone: "done", notes: "Heumarkt, by Heinzels Wintermärchen and the Rhine. 8.1 on 10,000+ reviews.", verdict: "Value: cheapest of the central hotels and you can walk out onto the Heumarkt market.", facts: [{ label: "Walk to Dom", value: "~10 min" }], photos: [], source: "Booking.com, 2 adults, 1 room, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_motelone", by: null, researcher: "Live search", title: "Motel One Köln-Neumarkt", link: BK("motel-one-koln-neumarkt"), price: "£474 per room, 2 nights (~£237 pp)", availability: "Available", availabilityTone: "done", notes: "On Neumarkt, right at Markt der Engel.", verdict: "Design budget chain, small rooms, great for the angels market.", facts: [{ label: "Walk to Dom", value: "~15 min" }], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_18arts", by: null, researcher: "Live search", title: "18Arts Hotel", link: BK("18arts"), price: "£495 per room, 2 nights (~£248 pp)", availability: "Available", availabilityTone: "done", notes: "Art hotel near the Old Town. 8.4 rating.", verdict: "Highest guest rating of the hotels with a score listed (8.4).", facts: [], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_lindner", by: null, researcher: "Live search", title: "Lindner Hotel Cologne Am Dom (JdV by Hyatt)", link: BK("lindner-city-plaza"), price: "£499 per room, 2 nights (~£250 pp)", availability: "Available", availabilityTone: "done", notes: "Near the cathedral, indoor pool. 8.3 on 4,900 reviews.", verdict: "Mid-price all-rounder with a pool for thawing out.", facts: [], photos: [], warning: "Check the Booking.com link lands on this exact property before booking.", source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_mondial", by: null, researcher: "Live search", title: "Hotel Mondial am Dom (MGallery)", link: BK("mondial-am-dom-koln"), price: "£645 per room, 2 nights (~£323 pp)", availability: "Available", availabilityTone: "warn", notes: "Two minutes from the Dom market. Was the original shortlist pick.", verdict: "Best location, premium price.", facts: [{ label: "Walk to Dom", value: "~2 min" }], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} },
           { id: "st_malzmuehle", by: null, researcher: "Live search", title: "Hotel zur Malzmühle (brauhaus hotel)", link: BK("zur-malzmuhle"), price: "£710 per room, 2 nights (~£355 pp)", availability: "Available", availabilityTone: "warn", notes: "Rooms above a working brauhaus in the Old Town. 8.3 rating.", verdict: "Most Cologne experience, priciest weekend rate.", facts: [], photos: [], source: "Booking.com, checked 6 Oct 2026 · rates change", votes: {} }
-        ], status: "open", chosen: null },
+        ], status: "decided", chosen: "st_motelone_altstadt" },
         { id: "dinner_sat", taskId: "foodBars", emoji: "🍺", kind: "dinner", title: "Saturday 5 Dec dinner for eight", desc: "Leaning towards eating at the market stalls (no booking needed). If the crew would rather sit down, a walk-in table for eight at a brauhaus on a December Saturday is a gamble, so book one.", owners: [], options: [
           { id: "din_market", by: null, researcher: "Jason", title: "Market food crawl (Heinzels food alleys)", link: "https://www.heinzels-wintermaerchen.de/en/", price: "Pay as you go, roughly €5–10 a dish (2024 prices)", availability: "No booking needed", availabilityTone: "done", notes: "Reibekuchen, Flammlachs, Handbrot and Glühwein, straight after the ice rink.", verdict: "Jason's lean: cheapest, most Christmassy, and no table to fight for.", facts: [], photos: ["images/market-food.jpg"], source: "koeln.de and heinzels-wintermaerchen.de · photo is an AI illustration", votes: {} },
           { id: "din_frueh", by: null, researcher: "Shortlist", title: "Früh am Dom", link: "https://www.google.com/maps/search/?api=1&query=Fr%C3%BCh+am+Dom+K%C3%B6ln", price: "Not checked", availability: "Big classic beer hall by the cathedral", availabilityTone: "done", notes: "The default brauhaus. Huge, loud, Kölsch on tap.", verdict: "Most likely to fit eight.", facts: [], photos: [], source: "Trip shortlist", votes: {} },
@@ -1546,7 +1547,7 @@
     const groupTasks = [
       { id: "arrivalNight", icon: "🛬", title: "Pick the Friday flight", desc: "Vote on the Friday evening flight so we land together, then add yours in Crew flights.", priority: "P1" },
       { id: "flights", icon: "✈️", title: "Book flights", desc: "Everyone books their own out and back. Fares are rising, so don't sit on it.", priority: "P1" },
-      { id: "accommodation", icon: "🏨", title: "Book the stay", desc: "Pick a hotel (or apartment) near the cathedral and agree the four room pairs.", priority: "P1" },
+      { id: "accommodation", icon: "🏨", title: "Book the stay", desc: "Booked: Motel One Köln-Altstadt. Still to do: agree the four room pairs.", priority: "P1" },
       { id: "activityShortlist", icon: "🎯", title: "Market shortlist", desc: "Vote in the Activity Market so the itinerary follows what the group wants.", priority: "P2" },
       { id: "foodBars", icon: "🍺", title: "Saturday dinner plan", desc: "Book a table for eight or agree to split and walk in.", priority: "P2" },
       { id: "itinerary", icon: "📍", title: "Build the itinerary", desc: "Lock the day plan and the Sunday exit time.", priority: "P2" },
@@ -2737,7 +2738,10 @@
 
 // Check-in / checkout instructions land on the itinerary days that need them, so
     // nobody has to dig through the Crew Desk while standing at a station with bags.
-    const STAY_BLOCKS = {};
+    const STAY_BLOCKS = {
+      d4: [{ tone: "in", emoji: "🏨", title: "Check in · Motel One Köln-Altstadt", when: "From 15:00", rows: [{ k: "Address", v: "Tel-Aviv-Str. 6, 50676 Köln" }, { k: "From Köln Hbf", v: "~20 min walk, or tram to Poststraße" }, { k: "Breakfast", v: "Not included" }], maps: "https://www.google.com/maps/search/?api=1&query=Motel+One+K%C3%B6ln-Altstadt+Tel-Aviv-Stra%C3%9Fe+6", link: "https://www.motel-one.com/en/hotels/cologne/hotel-cologne-altstadt/" }],
+      d6: [{ tone: "out", emoji: "🧳", title: "Check out · Motel One Köln-Altstadt", when: "By 12:00", rows: [{ k: "Bags", v: "Ask reception to hold them until we leave" }, { k: "Then", v: "Back for bags before the train to the airport" }], warn: "Luggage storage not confirmed with the hotel yet.", maps: "https://www.google.com/maps/search/?api=1&query=Motel+One+K%C3%B6ln-Altstadt+Tel-Aviv-Stra%C3%9Fe+6" }]
+    };
 
     function stayBlocksHtml(dayId) {
       const blocks = STAY_BLOCKS[dayId];
@@ -2946,9 +2950,9 @@
     const DAY_ACCENT = { d4: "#f6c560", d5: "#ff8a8a", d6: "#8fdcae" };
     const DAY_SCENE = { d4: "dom-market.jpg", d5: "heinzels.jpg", d6: "hohenzollern.jpg" };
     const DAY_DETAILS = {
-      d4: { sleep: "Hotel to be booked · central Cologne", move: "After-work flight, then S-Bahn (Cologne Bonn) or train (Düsseldorf) to Köln Hbf", prep: "Euros in cash for stalls and mug deposits · warm layers" },
-      d5: { sleep: "Hotel to be booked · central Cologne", move: "On foot all day, tram if legs give out", prep: "Ice rink tickets online (€11.50 Sat + €6.50 skates) · tower tickets if climbing · cash for food stalls" },
-      d6: { sleep: "Home", move: "On foot round the Old Town, then train Köln Hbf → Düsseldorf Flughafen (Eurowings 18:20) or S-Bahn to Cologne Bonn", prep: "Check out by the hotel's time, leave bags, check DB Navigator before leaving" }
+      d4: { sleep: "Motel One Köln-Altstadt · Tel-Aviv-Str. 6", move: "After-work flight, then S-Bahn (Cologne Bonn) or train (Düsseldorf) to Köln Hbf", prep: "Euros in cash for stalls and mug deposits · warm layers" },
+      d5: { sleep: "Motel One Köln-Altstadt · Tel-Aviv-Str. 6", move: "On foot all day, tram if legs give out", prep: "Ice rink tickets online (€11.50 Sat + €6.50 skates) · tower tickets if climbing · cash for food stalls" },
+      d6: { sleep: "Home", move: "On foot round the Old Town, then train Köln Hbf → Düsseldorf Flughafen (Eurowings 18:20) or S-Bahn to Cologne Bonn", prep: "Check out of Motel One by 12:00, ask reception to hold bags, check DB Navigator before leaving" }
     };
     // Operational detail per day, shown under the day's stops.
     const DAY_OPS = {
@@ -2975,7 +2979,7 @@
       { id: "x-mugs", kind: "extra", icon: "☕", name: "Glühwein, mugs and cash", tag: "Every market", summary: "Each market has its own mug design. You pay a deposit with your first drink and get it back when you return the mug, or keep it as a souvenir.", sections: [{ h: "Money", lines: ["Bring euros in cash. Plenty of stalls still don't take cards.", "Keep mug-deposit cash separate from your spending money.", "Set up one shared expenses group (Tricount or Splitwise) for hotel and dinner splits."] }] },
       { id: "x-flightout", kind: "extra", icon: "🛬", name: "Friday evening flights", tag: "Fri 4 Dec · one way", options: deskOpts("flight_out"), summary: "The earliest sensible flight lands about 20:15, so Friday night is roughly an hour at the markets before they close at 22:00. The cheapest has you in town about 23:10.", sections: [{ h: "Earliest into town", lines: ["Ryanair Stansted 18:00 → Cologne Bonn 20:15 · £106 · in town ~21:00."] }, { h: "Cheapest", lines: ["Eurowings Heathrow 19:30 → Düsseldorf 21:55 · £67 · in town ~23:10."] }] },
       { id: "x-flighthome", kind: "extra", icon: "🛫", name: "Sunday flights home", tag: "Sun 6 Dec · one way", summary: "The Eurowings 18:20 from Düsseldorf is the value pick and keeps most of Sunday. The BA 15:55 from Cologne Bonn is the simplest airport run.", options: deskOpts("flights_home") },
-      { id: "x-stay", options: deskOpts("stay_cologne"), kind: "extra", icon: "🏨", name: "Where to stay", tag: "Book early", summary: "On 6 Oct, central 3–4★ doubles were £448–£710 for Fri + Sat, about £224–£355 each sharing.", sections: [{ h: "For eight of us", lines: ["Agree the four room pairs early.", "A big apartment hasn't been searched yet. Worth a look if we want one base."] }] }
+      { id: "x-stay", options: deskOpts("stay_cologne"), kind: "extra", icon: "🏨", name: "Where we stay", tag: "Booked ✅", summary: "Motel One Köln-Altstadt, Tel-Aviv-Str. 6, Fri 4 to Sun 6 Dec. Booked by Jason on 17 Oct.", sections: [{ h: "For eight of us", lines: ["Agree the four room pairs.", "Check-in from 15:00 Friday, check-out by 12:00 Sunday.", "Breakfast isn't included. Cafés nearby, or pay at the hotel."] }] }
     ];
     DETAILS.push(
       { id: "x-food", kind: "stop", match: "market food", icon: "🥔", name: "What to eat at the markets", tag: "Saturday dinner", summary: "No booking for eight: graze the stalls instead. Heinzels has its own food alleys, Markt der Engel has the widest street-food range, and Stadtgarten is best for vegan and modern food.", sections: [
@@ -2994,7 +2998,8 @@
     const BOOK_BY = [
       { date: "Now", what: "Pick the Friday flight out, ideally all on the same one", tag: "Everyone", detail: "x-flightout" },
       { date: "Now", what: "Book your flights home too. Fares move daily", tag: "Everyone", detail: "x-flighthome" },
-      { date: "Now", what: "Hotel rooms near the cathedral for Fri + Sat", tag: "Owner needed", detail: "x-stay" },
+      { date: "Done ✅", what: "Hotel booked: Motel One Köln-Altstadt, Fri + Sat", tag: "Jason", detail: "x-stay" },
+      { date: "Now", what: "Agree the four room pairs", tag: "Everyone", detail: "x-stay" },
       { date: "By late Oct", what: "Saturday dinner for eight, if we decide to book rather than walk in", tag: "Owner needed" },
       { date: "Before you fly", what: "Euros in cash for stalls and mug deposits", tag: "Everyone", detail: "x-mugs" }
     ];
@@ -3286,6 +3291,8 @@
       openWhoModal();
     }
     function renderAll() {
+      // Booked desk rooms (e.g. the hotel) tick their group boss even on an older synced state.
+      if (state && state.desk) syncDeskTasks();
       ensureDesk(); ensurePlan();
       // Activity Market + Crew Desk tabs were removed (Oct 2026); their renderers stay unused.
       renderWho(); renderHero(); renderPlan(); renderVisualItinerary(); renderArrivals(); renderExtras();
